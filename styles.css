@@ -1,74 +1,189 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family=Montserrat:wght@600&display=swap');
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    position: relative; /* Required for positioning the pseudo-element */
+    height: 100vh; /* Set the height of the body to 100% of the viewport height */
+}
+
+body::before {
+    content: ''; /* Required for the pseudo-element to generate content */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('doc.jpg'); /* Replace 'doc.jpg' with the path to your background image */
+    background-size: cover; /* Ensures the background image covers the entire body */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    opacity: 0.7; /* Set the desired opacity level */
+    z-index: -1; /* Ensures the pseudo-element is positioned below the content */
+}
+/*------------ Login container ------------*/
+
+.box-area{
+    width: 860px;
+}
+
+/*------------ Right box ------------*/
+
+.right-box{
+    padding: 40px 30px 40px 40px;
+}
+
+/*------------ Custom Placeholder ------------*/
+
+::placeholder{
+    font-size: 16px;
+}
+
+.rounded-4{
+    border-radius: 20px;
+}
+.rounded-5{
+    border-radius: 30px;
+}
+
+.select-with-margin {
+    margin-left: 50px;
+}
+
+.custom-btn-color {
+    background-color: #006AD7; /* Replace with your desired color code ----- Old:#006AD7 New:#88a9c3*/ 
+    color: #fff; /* Text color for better visibility */
+    /* Add any additional styling as needed */
+}
+
+.text-custom {
+    color: #0455BF; /* Replace with your desired color code */
+}
+
+.select-btn{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.select-btn .btn-text{
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+}
+.select-btn .arrow-dwn{
+    display: flex;
+    height: 21px;
+    width: 21px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 50%;
+    background: #6e93f7;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+.select-btn.open .arrow-dwn{
+    transform: rotate(-180deg);
+}
+.list-items{
+    position: relative;
+    margin-top: 15px;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+.select-btn.open ~ .list-items{
+    display: block;
+}
+.list-items .item{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0 15px;
+    border-radius: 8px;
+}
+.list-items .item:hover{
+    background-color: #e7edfe;
+}
+.item .item-text{
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+.item .checkbox{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 16px;
+    width: 16px;
+    border-radius: 4px;
+    margin-right: 12px;
+    border: 1.5px solid #c0c0c0;
+    transition: all 0.3s ease-in-out;
 }
-
-.form-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
+.item.checked .checkbox{
+    background-color: #4070f4;
+    border-color: #4070f4;
 }
-
-h2 {
-    margin: 0 0 20px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-.input-group {
-    margin: 10px 0;
-    text-align: left;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-button {
-    background-color: #007BFF;
+.checkbox .check-icon{
     color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+    font-size: 11px;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+}
+.item.checked .check-icon{
+    transform: scale(1);
 }
 
-button:hover {
-    background-color: #0056b3;
+.add-subspecialty-btn {
+    margin-top: 10px; /* Adjust the margin as needed */
 }
 
-p {
-    margin: 10px 0 0;
+.label-custom {
+    font-size: 20px;
+    margin-top: 10px;
 }
 
-a {
-    color: #007BFF;
-    text-decoration: none;
+.btn-group-toggle label {
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px; /* Adjust the margin as needed */
 }
 
-a:hover {
-    text-decoration: underline;
+.btn-margin {
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+.btn-margin-time {
+    margin-left: 20px;
+}
+
+/*------------ For small screens------------*/
+
+@media only screen and (max-width: 768px){
+
+     .box-area{
+        margin: 0 10px;
+
+     }
+     .left-box{
+        height: 50px;
+        overflow: hidden;
+     }
+     .right-box{
+        padding: 20px;
+     }
+
 }
