@@ -1,0 +1,30 @@
+{
+  "name": "power_pat_girls",
+  "version": "1.0.0",
+  "description": "",
+  "main": "register.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RheaRizz/Power_Pat_Girls.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RheaRizz/Power_Pat_Girls/issues"
+  },
+  "homepage": "https://github.com/RheaRizz/Power_Pat_Girls#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "dbmate": "^2.8.0"
+  }
+}
