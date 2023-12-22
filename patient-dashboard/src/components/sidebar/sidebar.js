@@ -5,7 +5,10 @@ import { SidebarData } from './sidebar-data';
 function Sidebar() {
   return (
     <div className='Sidebar'>
-      <div className='logo'></div>
+      <div className='logo'>
+        <img src='logo-main.png' alt='logo'/>
+        <h2>PowerMed</h2>
+      </div>
       <ul className='SidebarList '>
         {SidebarData.map((val, key) => (
           <li
