@@ -1,5 +1,36 @@
 .user-profile {
-  background-color: #ebebeb;
+  height: auto;
+  width: 100%;
+  background-color: white;
+  padding: 20px; /* Adjust the padding as needed */
+  margin: 20px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+	border-radius: 10px;
+	outline: auto;
+	margin-top: 100px;
+	margin-left: 320px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.user-container {
+	flex: 1;
 	height: 100%;
-	width: 100%;
+	width: 50%;
+	outline: auto;
+	margin-right: 20px;
+}
+
+.appointment-container {
+	margin-right: 20px;
+}
+
+.appointment-container,
+.booking-container {
+	flex: 1;
+	height: 25%;
+	width: 50%;
+	outline: auto;
+	margin-bottom: 20px;
+	cursor: pointer;
 }
