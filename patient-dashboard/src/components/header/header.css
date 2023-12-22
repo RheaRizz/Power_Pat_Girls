@@ -1,6 +1,11 @@
 .header {
-  height: 70px;
+  height: 80px;
+  width: calc(100% - 300px); /* Adjust width to leave space for the sidebar */
   background-color: rgb(255, 255, 255);
-  display: flex;
-  outline-style: auto;
+  border: 0.5px solid rgb(237, 237, 237);
+  box-shadow: 0 0 25px rgb(230, 230, 230);
+  justify-content: space-between;
+  padding: 0 20px; /* Optional: Add padding for better visual appearance */
+  position: fixed; /* Fixed position to stay at the top while scrolling */
+  margin-left: 300px;
 }
