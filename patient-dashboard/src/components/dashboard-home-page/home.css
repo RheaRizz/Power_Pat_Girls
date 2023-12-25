@@ -1,21 +1,50 @@
-.app-content-page {
+.patient-home-page {
   height: auto;
   width: 100%;
   background-color: white;
-  padding: 50px; /* Adjust the padding as needed */
+  padding: 20px; /* Adjust the padding as needed */
   margin: 20px;
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
 	border-radius: 10px;
 	outline: auto;
 	margin-top: 100px;
 	margin-left: 320px;
+	display: flex;
+	flex-wrap: wrap;
 }
 
-.row-one {
-	background-color: greenyellow;
-	width: 30%;
-	border-radius: 10px;
-	padding: 16px;
-	font-family: 'Times New Roman', Times, serif;
-	cursor: pointer;
+.button-row {
+  display: flex;
+}
+
+.appointment-col,
+.booking-col {
+  flex: 1;
+  height: 20%;
+	width: 500px; /* temporary width  because the percentages are not working*/
+  cursor: pointer;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  padding: 1rem;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 20px;
+}
+
+.appointment-col {
+  background-color: #479ade;
+  margin-right: 20px;
+}
+
+.appointment-col:hover {
+  background-color: #479adef6;
+}
+
+.booking-col {
+  background-color: rgb(32, 61, 153);
+}
+
+.booking-col:hover {
+  background-color: #203c99f5;
 }
