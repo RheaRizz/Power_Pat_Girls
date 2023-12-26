@@ -1,58 +1,48 @@
-import React from 'react';
-import './user-profile.css';
-//import { ContactDetails } from './user-contact-details';
+import React from "react";
+import './user-profile.css'
+import { ContactDetails } from "./user-contact-details";
 
 function UserProfile() {
   return (
-    <div className="user-profile">
-      <div className="profile-column">
-        <div className='patient-info'>
-          <div className='container-header'>
-            <div className='header-content'>
-              <h3>Patient Name</h3>
-              <button>Edit</button>
+    <div className="background">
+      <div className="user-profile-column">
+        <div className="user-about">
+          <div className="column-header">
+            <div className="header-content">
+              <h3 className="title">Patient First MI Last Name</h3>
             </div>
           </div>
-          <div>Legal Name: </div>
-          <div>Date of Birth: --/--/---- (--yr)</div>
-          <div>Marital Status: </div>
-          <div>Children: </div>
+          <div className="text">
+            <div className="reqd">Legal Name: </div>
+            <div className="reqd">Date of Birth: </div>
+            <div className="reqd">Marital Status: </div>
+            <div className="reqd">Requirement: </div>
+          </div>
         </div>
-        <div className='patient-contact'>
-          <div className='container-header'>
-            <div className='header-content'>
-              <h3>Contact Details</h3>
+        <div className="patient-contact">
+          <div className="column-header">
+            <div className="header-content">
+              <h3 className="title">Contact Details</h3>
             </div>
           </div>
-          <div>Address(Home): </div>
-          <div>Mobile: </div>
-          <div>Email: </div>
-          <div className='patient-other-contact'>
-            <div className='patient-container-header'>
-              <h3>Patient's Contacts</h3>
-            </div>
-            <div className='contact-table'>
-              <div className='name-column'>
-                <strong>Name</strong>
-              </div>
-              <div className='contact-column'>
-                <strong>Contacts</strong>
-              </div>
-              <div className='actions'>
-                <strong>Actions</strong>
-              </div>
-            </div>
-          </div>
+          <ul className='contact-details'>
+            {ContactDetails.map((val, key) => (
+              <li key={key} className='row'>
+                <div id='icon'>{val.icon}</div>
+                <div id='title'>{val.title}</div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="button-container">
+          <button className="edit-profile">Edit Profile</button>
         </div>
       </div>
-      <div className="information-column">
-        <div className='general-info-row'></div>
-        <div className='appointment-row'>
-          <div className='appoint-row-header'>
-            
-          </div>
-        </div>
+      <div className="user-history">
+        <div className="information-column"></div>
+        <div className="appointments-column"></div>
       </div>
+      
     </div>
   );
 }
