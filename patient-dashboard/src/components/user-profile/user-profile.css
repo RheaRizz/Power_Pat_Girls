@@ -2,37 +2,97 @@
   height: auto;
   width: 100%;
   background-color: white;
+  padding: 20px;
+  margin: 20px;
+  margin-top: 100px;
+  margin-left: 320px;
+  border-radius: 10px;
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to the next line on small screens */
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
 .profile-column {
-  flex: 1; /* Adjust the width of the profile column */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.patient-contact,
+.patient-info {
+  border-radius: 10px;
+  border: 1px solid #479ade;
+  margin-right: 10px;
+  margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+.patient-contact {
+  height: 60%;
+  width: 100%; /* Use 100% width to fill the available space */
+}
+
+.patient-info {
+  color: black;
+  height: 100%;
+  width: 100%; /* Use 100% width to fill the available space */
 }
 
 .information-column {
-  flex: 2; /* Adjust the width of the information column */
+  flex: 2;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .general-info-row,
 .appointment-row {
-  flex: 1; /* Adjust the height of the rows */
-  border: 1px solid #ccc; /* Add borders for visualization */
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: 1px solid #479ade;
+  width: 100%; /* Use 100% width to fill the available space */
+  margin-bottom: 10px;
+}
+
+.general-info-row {
+  height: 50%;
+  width: 100%;
+}
+
+.appointment-row {
+  height: 100%; /* Adjust height as needed */
+  width: 100%;
+}
+
+.contact-details {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-details .row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact-details #icon {
+  margin-right: 10px;
 }
 
 /* Media query for small screens */
 @media (max-width: 768px) {
   .user-profile {
-    flex-direction: column; /* Stack items vertically on small screens */
+    flex-direction: column;
   }
 
   .profile-column,
   .information-column,
   .general-info-row,
-  .appointment-row {
-    width: 100%; /* Make items take full width on small screens */
+  .appointment-row,
+  .patient-contact,
+  .patient-info {
+    width: 100%;
   }
 }
