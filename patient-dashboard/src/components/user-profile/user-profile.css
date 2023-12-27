@@ -68,7 +68,14 @@
   flex: 2;
   display: flex;
   flex-direction: column;
+}
+
+.information-column,
+.appointments-column {
   outline: auto;
+}
+
+.information-column {
   margin-bottom: 20px;
 }
 

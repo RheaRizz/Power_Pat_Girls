@@ -14,9 +14,9 @@ function UserProfile() {
           </div>
           <div className="text">
             <div className="reqd">Legal Name: </div>
+            <div className="reqd">Gender: </div>
             <div className="reqd">Date of Birth: </div>
-            <div className="reqd">Marital Status: </div>
-            <div className="reqd">Requirement: </div>
+            <div className="reqd">Age: </div>
           </div>
         </div>
         <div className="patient-contact">
@@ -39,8 +39,27 @@ function UserProfile() {
         </div>
       </div>
       <div className="user-history">
-        <div className="information-column"></div>
-        <div className="appointments-column"></div>
+        <div className="information-column">
+          <div className="gen-info-col">
+            <div className="info">Blood Group: </div>
+            <div className="info">Height: </div>
+            <div className="info">Weight: </div>
+          </div>
+          <div className="med-info-col">
+            <div className="info">Conditions: </div>
+            <div className="info">Medications: </div>
+            <div className="info">Allergies: </div>
+          </div>
+        </div>
+        <div className=" appointments-column">
+          <div className="column-header">Pending Appointments</div>
+          <div className="section-columns">
+            <div className="column-header">Date</div>
+            <div className="column-header">Time</div>
+            <div className="column-header">Doctor</div>
+            <div className="column-header">Location</div>
+          </div>
+        </div>
       </div>
       
     </div>
