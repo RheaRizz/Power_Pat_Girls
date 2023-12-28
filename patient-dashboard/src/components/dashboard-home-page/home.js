@@ -3,7 +3,7 @@ import './home.css'
 
 function Home() {
   return (
-    <div className="patient-home-page">
+    <div className="background">
       {/* Row One */}
       <div className="button-row">
 				<div className="appointment-col">

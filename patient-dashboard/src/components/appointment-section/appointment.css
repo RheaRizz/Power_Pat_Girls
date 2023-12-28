@@ -1,0 +1,13 @@
+.background {
+    height: auto;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    margin-top: 100px;
+    margin-left: 320px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
