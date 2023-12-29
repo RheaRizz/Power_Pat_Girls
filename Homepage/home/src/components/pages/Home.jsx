@@ -1,6 +1,7 @@
 // Home.js
 import React from "react";
 import "../../App.css"; 
+import '../styles/Home.css';
 import Footer from "./Footer";
 import CardBox from "./CardBox"; 
 import { Link } from "react-router-dom"; 

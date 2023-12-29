@@ -13,7 +13,7 @@ function Header() {
 
   return (
     <header className="py-1 fixed-top" 
-        style={{ backgroundColor: 'white' }}>
+        style={{ backgroundColor: 'white', boxShadow: '0 8px 10px rgba(0, 0, 0, 0.1)' }}>
       <div className="container">
         <div className="d-flex align-items-center justify-content-between">
           {/* Use an img tag with the logo image */}

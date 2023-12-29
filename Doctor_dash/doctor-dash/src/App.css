@@ -1,0 +1,37 @@
+
+body{
+  background-color: #E2F1F7; /* Adjust the shade of gray as needed */
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.container-fluid {
+  /* min-height: 100vh; */ /* Remove or adjust this line */
+  height: 100%; /* Add this line if needed */
+}
+
+.app-container {
+  background-color: white; /* Set your desired background color */
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
