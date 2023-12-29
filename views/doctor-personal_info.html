@@ -34,11 +34,11 @@
                           </div>
                 
                           <div class="input-group mb-3">
-                              <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Degree/Title/Designation">
+                              <input type="text" id="degree_title_designation" name="degree_title_designation" class="form-control form-control-lg bg-light fs-6" placeholder="Degree/Title/Designation">
                           </div>
                 
                           <div class="input-group mb-3">
-                            <input type="year" class="form-control form-control-lg bg-light fs-6" placeholder="Year Started">
+                            <input type="number" id="year_started" name="year_started" class="form-control form-control-lg bg-light fs-6" placeholder="Year Started">
                           </div>
                 
                           <div class="select-btn">
@@ -49,44 +49,36 @@
                           </div>
                           <ul class="list-items">
                               <li class="item">
-                                  <span class="checkbox">
-                                      <i class="fa-solid fa-check check-icon"></i>
-                                  </span>
-                                  <span class="item-image">
+                                  <input type="checkbox" id="general" name="specialties[]" value="general">
+                                  <label for="general">
                                     <img src="../IMAGES/1.png" style="width:50px" class="me-2" 
                                     alt="General">
-                                  </span>
+                                  </label>
                               </li>
                               <li class="item">
-                                  <span class="checkbox">
-                                      <i class="fa-solid fa-check check-icon"></i>
-                                  </span>
-                                  <span class="item-image">
+                                  <input type="checkbox" id="pediatrics" name="specialties[]" value="pediatrics">
+                                  <label for="pediatrics">
                                     <img src="../IMAGES/2.png" style="width:50px" class="me-2" 
                                     alt="Pediatrics">
-                                  </span>
+                                  </label>
                               </li>
                               <li class="item">
-                                  <span class="checkbox">
-                                      <i class="fa-solid fa-check check-icon"></i>
-                                  </span>
-                                  <span class="item-image">
+                                  <input type="checkbox" id="dentistry" name="specialties[]" value="dentistry">
+                                  <label for="dentistry">
                                     <img src="../IMAGES/3.png" style="width:50px" class="me-2" 
                                     alt="Dentistry">
-                                  </span>
+                                  </label>
                               </li>
                               <li class="item">
-                                  <span class="checkbox">
-                                      <i class="fa-solid fa-check check-icon"></i>
-                                  </span>
-                                  <span class="item-image">
+                                  <input type="checkbox" id="surgery" name="specialties[]" value="surgery">
+                                  <label for="surgery">
                                     <img src="../IMAGES/4.png" style="width:50px" class="me-2" 
                                     alt="Surgery">
-                                  </span>
+                                  </label>
                               </li>
                           </ul>
                 
-                          <div class="input-group mb-3" id="subspecialties">
+                          <div class="input-group mb-3" id="subspecialties" name="subspecialties[]">
                               <!-- Subspecialties will be added here dynamically -->
                           </div>
                 
@@ -99,7 +91,7 @@
                           </div>
                           
                           <div class="input-group mb-3">
-                            <a href="doctor-validation.html" class="btn btn-lg custom-btn-color w-100 fs-6">Next</a>
+                            <button type="submit" class="btn btn-lg custom-btn-color w-100 fs-6">Next</button>
                           </div>
                           
                         </div>
