@@ -1,9 +1,10 @@
 import React from "react";
+import '../styles/Footer.css';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faYoutube } 
          from '@fortawesome/free-brands-svg-icons';
-
+         
 function Footer() {
   return (
     <footer className="py-3 footer-container">

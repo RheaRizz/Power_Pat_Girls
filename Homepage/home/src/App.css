@@ -1,165 +1,137 @@
-/*HOMEPAGE*/
-/* FIRST-SECTION */
+/*RESPONSIVENESS*/
 
-.first-section {
-  background-image: url('./components/images/homepage.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-top: 0;
-  padding-bottom: 260px;
-  
-}
-.first-section-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: left;
-}
-.tagline {
-  width: 80%;
-  margin: 0 auto;
-  text-align: left;
-  justify-content: center;
-  /* Align tagline text to the left */
-  margin-left: 0px;
-  margin-top: 170px;
-}
+@media (max-width: 767px) {
+  .custom-card{
+    width: 90%;
+  }
+  .doctor-name{
+    white-space: nowrap;
+  }
+  .row.align-items-center {
+    flex-direction: column;
+  }
+  .col-md-6.col-sm-12.mb-3.mb-md-0.text-center {
+    text-align: left !important;
+    margin-top: -25px ;
+  }
 
-.tagline h2 {
-  font-size: 70px;
-  color: #223b52;
-  font-family: 'Montserrat', sans-serif; /* Set font family */
-  font-weight: bold; /* Make it bold */
-}
-.tagline p {
-  font-size: 1.2rem;
-  color: #223b52;
-  font-family: 'Montserrat', sans-serif; /* Set font family */
-}
-.search-bar {
-  width: 600px;
-  margin: 0 auto;
-  min-width: 200px;
-  height: 55px;
-  padding: 10px;
-  /* Reduce padding for the search bar */
-  border-radius: 15px;
-  color: black;
-}
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-  .tagline h2 {
-    font-size: 40px;
+  .book-button {
+    text-align: left !important; /* Align buttons to the left */
   }
-  .tagline p {
-    font-size: 1rem;
-  }
-  .search-bar {
-    width: 125%;
+
+  .profile-pic {
+      width: 100px; /* Adjust the width for smaller screens */
+      height: 100px; /* Adjust the height for smaller screens */
+      margin-bottom: -10px; /* Adjust margin for better spacing */
+      margin-left: 50px;
+    }
+  .d-flex.justify-content-end {
+    justify-content: flex-start !important; /* Align buttons to the left */
+    margin-top: -30px ;
   }
 }
 
-/* SECOND-SECTION */
-
-.second-section {
-  background-color: #e4e4e452;
-  padding-top: 70px;
-  padding-bottom: 150px;
+@media (min-width: 320px) {
+  .doctor-name{
+    white-space: nowrap;
+  }
+  .profile-text{
+    margin-left: -25px;
+  }
+  .profile-time{
+    margin-left: -25px;
+    margin-bottom: 10px;
+  }
+  .profile-pic {
+    margin-top: 20px;
+  }
+  .view-book-button{
+    margin-left: -25px;
+  }
 }
-.title-container {
-  text-align: left;
-  padding: 20px;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  color: #223b52;
-}
-.title-container h2 {
-  font-size: 25px;
-}
-.card-box-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-   /* Add your preferred color */
-}
-.card-box {
-  width: 240px;  
-  height: 260px; 
-  margin: 30px;
-  padding: 20px;
-  border: 1px solid #111111;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-sizing: border-box;
-  border-radius: 500px;
-  overflow: hidden;
-  box-shadow: 10px 10px 15px #778a9c;
-  transform-style: preserve-3d;
-}
-.card-box:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-}
-.card-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.card-box .card-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.card-box .card-title {
-  margin-top: 12px;
-  font-size: 1.0rem;
-  color: #333;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-}
-.link-no-underline {
-  text-decoration: none;
+@media (min-width: 375px) {
+  .doctor-name{
+    white-space: nowrap;
+  }
+  .profile-text{
+    margin-right: 135px;
+  }
 }
 
+@media (min-width: 425px) {
+  .doctor-name{
+    white-space: nowrap;
+  }
+  .profile-text{
+    margin-left: -1px;
+    margin-top: 10px;
+  }
+  .profile-pic {
+    width: 120px; /* Adjust the width for smaller screens */
+    height: 120px; /* Adjust the height for smaller screens */
+}
+  .profile-time{
+    margin-left: -1px;
+    margin-bottom: 10px;
+  }
+  .view-book-button{
+    margin-left: -5px;
+  }
+}
+@media (min-width: 768px) {
+  .doctor-name{
+    white-space: nowrap;
+  }
+  .profile-text{
+    margin-left: -55px;
+    margin-top: 70px;
+  }
+  .profile-time{
+    margin-top: 60px;
 
-/* Footer Styles */
-.footer-container {
-  background-color: #a6a9a9; /* Light gray background */
-  padding: 20px 0; /* Add space around the content */
+  }
 }
-.footer-container h5 {
-  font-size: 18px;
-  color: #343a40; /* Dark text color */
-  font-family:'Times New Roman', Times, serif;
-  margin-bottom: 20px; /* Space between sections */
-  margin-top: 10px;
+
+@media (min-width: 1024px) {
+  .custom-card{
+    width: 80%;
+  }
+  .doctor-name{
+    white-space: nowrap;
+  }
+  .profile-text{
+    margin-left: -125px;
+    margin-top: 70px;
+  }
+  .profile-time{
+    margin-left: -75px;
+    margin-top: 68px;
+  }
 }
-.footer-container ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+@media (min-width: 1440px) {
+  .doctor-name{
+    white-space: nowrap;
+  }
+  .profile-text{
+    margin-left: -220px;
+    margin-top: 70px;
+  }
+  .profile-time{
+    margin-left: 70px;
+  }
 }
-.footer-container a {
-  color: #495057; /* Dark text color */
-  text-decoration: none;
-  font-family: 'Times New Roman', Times, serif;
-}
-/* Social media icons styles */
-.footer-container a .icon-circle {
-  width: 40px;
-  height: 40px;
-  background-color: gray; /* Facebook blue color */
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}
-.footer-container a .icon-circle:hover {
-  background-color: #0056b3; /* Darker blue color on hover */
-}
-.footer-container a .icon-circle svg {
-  font-size: 20px;
-  color: #403e3e; /* White icon color */
+@media (min-width: 2000px) {
+  .custom-card{
+    width: 70%;
+  }
+  .doctor-name{
+    white-space: nowrap;
+  }
+  .profile-text{
+    margin-left: -470px;
+    margin-top: 70px;
+  }
+  .profile-time{
+    margin-left: 440px;
+  }
 }
