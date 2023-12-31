@@ -10,7 +10,7 @@ const TablePage = ({ appointments, renderTableHead }) => {
   return (
     <MDBTable autoWidth striped>
       <MDBTableHead>
-        {renderTableHead()} {/* Render custom table header */}
+        {renderTableHead()}
       </MDBTableHead>
       <MDBTableBody rows={data_people.rows} />
     </MDBTable>

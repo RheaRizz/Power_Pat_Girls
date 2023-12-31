@@ -112,10 +112,10 @@ function Appointment() {
   };
 
   return (
-    <div className="background">
+    <div className="background-3">
       <div className="section">
-        <div className="table-content">
-          <h2 className="header-text">Pending Appointments</h2>
+        <div className="table-content-2">
+          <h2 className="header-text-3">Pending Appointments</h2>
           <TablePage
             appointments={pendingAppointments}
             renderTableHead={renderPendingAppointmentsHead}
@@ -124,8 +124,8 @@ function Appointment() {
         </div>
       </div>
       <div className="section">
-        <div className="table-content">
-          <h2 className="header-text">Appointment History</h2>
+        <div className="table-content-2">
+          <h2 className="header-text-3">Appointment History</h2>
           <TablePage
             appointments={historyAppointments}
             renderTableHead={renderHistoryAppointmentsHead}
