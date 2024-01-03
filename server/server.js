@@ -7,7 +7,7 @@ const pool = require('./database');
 const multer = require('multer');
 
 const app = express();
-const port = 3000;
+const port = 5000;
 
 // TO BE IMPLEMENTED FOR IMAGE SAVING
 // const storage = multer.diskStorage({
@@ -117,8 +117,6 @@ app.post('/doctor-personal_info', async (req, res) => {
     specialties,
     userId
   ]
-
-  console.log('New Doctor Data: ', newDoctor);
 
   const doctorQuery = "INSERT INTO doctors (firstname, lastname, degree_title_designation, year_started, specialties, user_id) VALUES ($1, $2, $3, $4, $5, $6)";
   try {
@@ -270,8 +268,18 @@ app.post('/login', async (req, res) => {
   }
 });
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../views', 'log_in.html')); // change to homepage
+app.post('/booking-request', async (req, res) => {
+  const {patientId, doctorId} = req.body;
+
+  try {
+    const result = await pool.query(
+      "INSERT INTO booking_requests (patient_id, doctor_id) VALUES ($1, $2)",
+      [patientId, doctorId]
+    );
+    res.status(201).send(result.rows[0]);
+  } catch (err) {
+    res.status(500).send({ message: 'Error creating booking requests', err });
+  }
 });
 
 app.get('/login', (req, res) => {
@@ -308,6 +316,18 @@ app.get('/doctor-clinic', (req, res) => {
 
 app.get('/doctor-schedule', (req, res) =>{
   res.sendFile(path.join(__dirname, '../views', 'doctor-schedule.html'));
+});
+
+app.get('/doctor-dashboard', async (req, res) => {
+  const userId = req.session.userId;
+  const doctorQuery = "SELECT doctors.*, med_institutions.* FROM doctors JOIN med_institutions ON doctors.user_id = med_institutions.user_id WHERE doctors.user_id = $1";
+
+  try {
+    const result = await pool.query(doctorQuery, [userId]);
+    res.json(result.rows[0]);
+  } catch (err) {
+    res.status(401).json({ message: 'Error ' + err.message });
+  }
 });
 
 app.listen(port, () => {
