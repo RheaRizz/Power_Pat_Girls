@@ -1,0 +1,17 @@
+.card-form{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin-left: 400px;
+    padding: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.section-heading {
+    font-size: 25px; /* Adjust the font size for h1 as needed */
+  }
+  
+  .subsection-heading {
+    font-size: 15px; /* Adjust the font size for h2 as needed */
+    padding-bottom: 10px;
+  }
+  

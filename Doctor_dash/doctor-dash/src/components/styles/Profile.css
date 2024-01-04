@@ -60,11 +60,12 @@
 /* Booking Requests */
 .booking {
   margin-top: 20px;
-  width: 82%;
+  width: 90%;
+  margin-bottom: 50px;
 }
 
 .bg-gray {
-  background-color: #f8f9fa; /* Change to your desired background color */
+  background-color: transparent; /* Change to your desired background color */
 }
 
 .list-group-item {
@@ -140,4 +141,25 @@
   font-family: 'Times New Roman', Times, serif;
   color: black !important;
   font-size: 12px;
+}
+.text-danger{
+  font-family: 'Times New Roman', Times, serif;
+  color: black !important;
+  font-size: 12px;
+}
+.text-success{
+  font-family: 'Times New Roman', Times, serif;
+  color: black !important;
+  font-size: 12px;
+}
+
+.custom-btn {
+  background-color: transparent;
+  border: none;
+  padding: 5px; /* Remove any padding if needed */
+}
+.parent-cal {
+  /* Your styles for the ParentCal component */
+  padding-top: 20px; /* Adjust the margin-top value as needed */
+  /* Add other styles as needed */
 }
