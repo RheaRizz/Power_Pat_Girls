@@ -9,9 +9,9 @@ import Appointment from './components/appointment-section/appointments';
 function App() {
   return (
     <div className='App'>
-			<Header />
-			<Sidebar />
-			<Appointment />
+      <Header />
+      <Sidebar />
+      <UserProfile />
     </div>
   )
 }

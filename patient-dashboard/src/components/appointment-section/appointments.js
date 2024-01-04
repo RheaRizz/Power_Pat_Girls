@@ -39,7 +39,6 @@ function Appointment() {
       clinic: "Fortuna Medical Clinic",
       date: "Nov 21, 2023",
       time: "4:30 PM",
-      status: "Done",
     },
     {
       id: "2",
@@ -47,7 +46,6 @@ function Appointment() {
       clinic: "Paradise Grove Hospital Center",
       date: "Aug 18, 2023",
       time: "1:00 PM",
-      status: "Done",
     },
     {
       id: "3",
@@ -55,7 +53,6 @@ function Appointment() {
       clinic: "North Star Medical Clinic",
       date: "Jul 29, 2023",
       time: "2:30 PM",
-      status: "Done",
     },
     {
       id: "4",
@@ -63,7 +60,6 @@ function Appointment() {
       clinic: "Little River Community Hospital",
       date: "Dec 4, 2023",
       time: "6:00 PM",
-      status: "Done",
     },
   ]);
 
@@ -89,7 +85,7 @@ function Appointment() {
         <td>{pendingAppointments[0].date}</td>
         <td>{pendingAppointments[0].time}</td>
         <td>
-          <div className="buttons">
+          <div className="button">
             <button onClick={() => alert("Cancel")}>Cancel</button>
             <button onClick={() => alert("Reschedule")}>Reschedule</button>
           </div>
@@ -106,7 +102,6 @@ function Appointment() {
         <th>Clinic Location</th>
         <th>Date</th>
         <th>Time</th>
-        <th>Status</th>
       </tr>
     );
   };
@@ -115,7 +110,7 @@ function Appointment() {
     <div className="background-3">
       <div className="section">
         <div className="table-content-2">
-          <h2 className="header-text-3">Pending Appointments</h2>
+          <h2 className="header-text-3">Upcoming Appointments</h2>
           <TablePage
             appointments={pendingAppointments}
             renderTableHead={renderPendingAppointmentsHead}

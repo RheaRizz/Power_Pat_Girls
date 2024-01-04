@@ -6,8 +6,8 @@
   background-color: white;
   padding: 20px;
   margin: 20px;
-  margin-top: 100px;
   margin-left: 320px;
+  margin-top: 100px;
   border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
@@ -15,34 +15,59 @@
   font-family: 'Times New Roman', Times, serif;
 }
 
+/* First column: user info and user contact details */ 
+
 .user-info,
-.user-contact {
-  border: 1px solid #ddd;
-  border-radius: 5%;
-  padding: 5%;
+.user-contact,
+.edit-profile-button-1,
+.medical-info {
   margin-bottom: 5%;
 }
 
-.table-content-1 {
+.user-info,
+.user-contact {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.header-2 {
+  padding: 5px;
+}
+
+.header-text-2 {
+  margin: 10px;
+}
+
+.user-info .table-content-1,
+.user-contact .table-content-1 {
+  padding: 5px;
+  margin: 5px;
   display: flex;
   flex-direction: column;
 }
 
-.user-info-item,
-.user-contact-item {
-  margin-bottom: 10px;
+.button-container {
+  width: 50%;
 }
 
 .edit-profile-button-1 {
-  height: 40px;
-  width: 90%;
+  background-color: #479ade00;
+  color: #479ade;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-/* Second Column CSS */
+.edit-profile-button-1:hover {
+  color: #306b9c;
+}
 
-/* Medical-info */
+/* Second column: user med info and upcoming appointments of user */
 
-.medical-info-container {
+.medical-info {
+  border: 1px solid #ddd;
+  border-bottom: none;
+  border-radius: 4px;
   overflow: hidden;
   background-color: white;
 }
@@ -53,10 +78,10 @@
 }
 
 .medical-info .table-content-1 {
-  border: 1px solid #ddd;
-  border-radius: 10px;
   overflow: hidden;
   background-color: white;
+  display: flex;
+  flex-direction: column;
 }
 
 .medical-info .header-text-2 {
@@ -67,9 +92,7 @@
 
 .medical-info-table th,
 .medical-info-table td {
-  padding: 12px;
-  text-align: start;
-  border-bottom: 1px solid #ddd;
+  padding: 10px;
   font-size: 15px;
   font-family: 'Times New Roman', Times, serif;
 }
@@ -79,65 +102,67 @@
   color: white;
   font-size: 16px;
   font-family: 'Times New Roman', Times, serif;
+  text-align: center;
 }
 
-/* Appointment History Table */
-
-.appointment-history .table-content-1 {
+.upcoming-appointments {
   border: 1px solid #ddd;
-  border-radius: 10px;
+  border-bottom: none;
+  border-radius: 4px;
   overflow: hidden;
   background-color: white;
-  margin-top: 20px; /* Adjust the margin top as needed */
 }
 
-.appointment-history .header-text-2 {
+.upcoming-appointments table {
+  overflow: hidden;
+  border-collapse: collapse;
+}
+
+.upcoming-appointments .table-content-1 {
+  overflow: hidden;
+  background-color: white;
+}
+
+.upcoming-appointments .header-text-2 {
   font-size: 20px;
   font-family: 'Times New Roman', Times, serif;
   margin: 15px;
 }
 
-.appointment-history table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.appointment-history th,
-.appointment-history td {
-  padding: 12px;
-  text-align: start;
-  border-bottom: 1px solid #ddd;
+.upcoming-appointments th,
+.upcoming-appointments td {
+  padding: 10px;
   font-size: 15px;
   font-family: 'Times New Roman', Times, serif;
 }
 
-.appointment-history th {
+.upcoming-appointments th {
   background-color: #479ade;
   color: white;
-  font-size: 16px;
   font-family: 'Times New Roman', Times, serif;
+  text-align: center;
 }
 
-.appointment-history tbody tr:hover {
+.upcoming-appointments td {
+  max-width: 100px;
+}
+
+.upcoming-appointments tbody tr:hover {
   background-color: #f5f5f5;
 }
-
-/* Responsive Styling */
 
 @media screen and (max-width: 768px) {
   .background-2 {
     margin-left: 0;
   }
 
-  .user-profile-column {
+  .user-profile-column-1,
+  .user-profile-column-2 {
     width: 100%;
     margin-bottom: 20px;
   }
 
-  .user-contact,
-  .user-info,
-  .medical-info,
-  .appointment-history {
-    width: 100%;
+  .button-container {
+    width: 100%; /* Make the button container full width on small screens */
   }
 }
