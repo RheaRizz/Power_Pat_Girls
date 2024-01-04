@@ -37,6 +37,20 @@ function UserProfile() {
   const [upcomingAppointments, setUpcomingAppointments] =  useState([
     {
       id: "1",
+      doctor: "Dr. John Patrick Pineda",
+      clinic: "Forest Health General Hospital",
+      date: "6/26/2024",
+      time: "10:00",
+      status: "Approved",
+			'Action': (
+				<div>
+					<button onClick={() => alert("Cancel")}>Cancel</button>
+					<button onClick={() => alert("Reschedule")}>Reschedule</button>
+				</div>
+			)
+    },
+    {
+      id: "2",
       doctor: "Dr. Lois Kirsten Alonsagay",
       clinic: "Fortuna Medical Clinic",
       date: "1/4/24",

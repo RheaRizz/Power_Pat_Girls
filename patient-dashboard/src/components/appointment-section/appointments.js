@@ -3,13 +3,14 @@ import "./appointment.css";
 import TablePage from "./appointment-content";
 
 function Appointment() {
-  const [pendingAppointments, setPendingAppointments] = useState([
+  const [upcomingAppointments, setUpcomingAppointments] = useState([
     {
       id: "1",
       doctor: "Dr. John Patrick Pineda",
       clinic: "Forest Health General Hospital",
-      date: "Jun 26, 2024",
+      date: "6/26/2024",
       time: "10:00 AM",
+      status: "Approved",
 			'Action': (
 				<div>
 					<button onClick={() => alert("Cancel")}>Cancel</button>
@@ -17,18 +18,19 @@ function Appointment() {
 				</div>
 			)
     },
-		{
+    {
       id: "2",
-      doctor: "Dr. First name Last name",
-      clinic: "Insert Hospital Name",
-      date: "mm dd, yyyy",
-      time: "hh:mm -M",
-			'Action': (
-				<div>
-					<button onClick={() => alert("Cancel")}>Cancel</button>
-					<button onClick={() => alert("Reschedule")}>Reschedule</button>
-				</div>
-			)
+      doctor: "Dr. Lois Kirsten Alonsagay",
+      clinic: "Fortuna Medical Clinic",
+      date: "1/4/24",
+      time: "16:00",
+      status: "Requested for a Reschedule",
+      'Action': (
+        <div className="button">
+          <button onClick={() => alert("Cancel")}>Cancel</button>
+          <button onClick={() => alert("Reschedule")}>Reschedule</button>
+        </div>
+      )
     }
   ]);
 
@@ -37,33 +39,33 @@ function Appointment() {
       id: "1",
       doctor: "Dr. Lois Alonsagay",
       clinic: "Fortuna Medical Clinic",
-      date: "Nov 21, 2023",
-      time: "4:30 PM",
+      date: "11/21/2023",
+      time: "16:30",
     },
     {
       id: "2",
       doctor: "Dr. Faith Magsael",
       clinic: "Paradise Grove Hospital Center",
-      date: "Aug 18, 2023",
-      time: "1:00 PM",
+      date: "8/18/2023",
+      time: "13:00",
     },
     {
       id: "3",
       doctor: "Dr. Rhea Rizz Perocho",
       clinic: "North Star Medical Clinic",
-      date: "Jul 29, 2023",
-      time: "2:30 PM",
+      date: "7/29/2023",
+      time: "14:30",
     },
     {
       id: "4",
       doctor: "Dr. Chescka Puljanan",
       clinic: "Little River Community Hospital",
-      date: "Dec 4, 2023",
-      time: "6:00 PM",
+      date: "12/4/2023",
+      time: "18:00",
     },
   ]);
 
-  const renderPendingAppointmentsHead = () => {
+  const renderUpcomingAppointmentsHead = () => {
     return (
       <tr>
         <th>#</th>
@@ -71,19 +73,20 @@ function Appointment() {
         <th>Clinic Location</th>
         <th>Date</th>
         <th>Time</th>
+        <th>Status</th>
         <th>Action</th>
       </tr>
-    );
+    )
   };
 
-  const renderPendingAppointmentsRow = () => {
+  const renderUpcomingAppointmentsRow = () => {
     return (
       <tr>
-        <td>{pendingAppointments[0].id}</td>
-        <td>{pendingAppointments[0].doctor}</td>
-        <td>{pendingAppointments[0].clinic}</td>
-        <td>{pendingAppointments[0].date}</td>
-        <td>{pendingAppointments[0].time}</td>
+        <td>{upcomingAppointments[0].id}</td>
+        <td>{upcomingAppointments[0].doctor}</td>
+        <td>{upcomingAppointments[0].clinic}</td>
+        <td>{upcomingAppointments[0].date}</td>
+        <td>{upcomingAppointments[0].time}</td>
         <td>
           <div className="button">
             <button onClick={() => alert("Cancel")}>Cancel</button>
@@ -112,9 +115,9 @@ function Appointment() {
         <div className="table-content-2">
           <h2 className="header-text-3">Upcoming Appointments</h2>
           <TablePage
-            appointments={pendingAppointments}
-            renderTableHead={renderPendingAppointmentsHead}
-            renderTableRows={renderPendingAppointmentsRow}
+            appointments={upcomingAppointments}
+            renderTableHead={renderUpcomingAppointmentsHead}
+            renderTableRows={renderUpcomingAppointmentsRow}
           />
         </div>
       </div>
