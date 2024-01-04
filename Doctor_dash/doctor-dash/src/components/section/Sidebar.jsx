@@ -9,10 +9,12 @@ import '../styles/Sidebar.css';
 function Sidebar() {
   const location = useLocation();
   const isEditProfilePage = location.pathname === '/edit-profile';
+  
 
   if (isEditProfilePage) {
     return null; 
   }
+
 
   return (
   <div className='sidebar col-2' style={{ height: '300vh' }}>
@@ -24,12 +26,12 @@ function Sidebar() {
             <i className="bi bi-person-workspace"></i>
             <span> Profile</span>
           </Link>
-        </li>
         <li className="nav-item">
-          <Link to="/calendar" className="nav-link">
-            <i className="bi bi-calendar2-plus"></i>
-            <span> Calendar</span>
+          <Link to="/appointment" className="nav-link">
+            <i className="bi bi-box-arrow-right"></i>
+            <span>Appointments</span>
           </Link>
+        </li>
         </li>
         <li className="nav-item">
           <Link to="/patient" className="nav-link">
@@ -37,10 +39,11 @@ function Sidebar() {
             <span> Patient </span>
           </Link>
         </li>
+
         <li className="nav-item">
           <Link to="/logout" className="nav-link">
             <i className="bi bi-box-arrow-right"></i>
-            <span>Logout</span>
+            <span> Logout </span>
           </Link>
         </li>
       </ul>
