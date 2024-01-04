@@ -32,7 +32,6 @@ function BookingInstruction({ handleClosePopup }) {
             table.
           </li>
         </ol>
-        <button onClick={handleClosePopup}>Close</button>
       </div>
     </div>
   );
