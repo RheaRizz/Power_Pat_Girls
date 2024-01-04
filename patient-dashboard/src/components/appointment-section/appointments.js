@@ -9,7 +9,7 @@ function Appointment() {
       doctor: "Dr. John Patrick Pineda",
       clinic: "Forest Health General Hospital",
       date: "6/26/2024",
-      time: "10:00 AM",
+      time: "10:00",
       status: "Approved",
 			'Action': (
 				<div>
