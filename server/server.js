@@ -10,21 +10,22 @@ const app = express();
 const port = 5000;
 
 // TO BE IMPLEMENTED FOR IMAGE SAVING
-// const storage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//     cb(null, 'uploads/');
-//   },
-//   filename: (req, file, cb) => {
-//     cb(null, Date.now() + '-' + file.originalname);
-//   }
-// });
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/');
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + '-' + file.originalname);
+  }
+});
 
-// const upload = multer({ storage: storage });
+const upload = multer({ storage: storage });
 
 app.use(session({
   secret: 'secret key',
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  cookie: { secure: true, httpOnly: true }
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -44,7 +45,7 @@ app.post('/create-account', async (req, res) => {
     userType
   };
 
-  const insert = "INSERT INTO users (firstname, lastname, email, password, usertype) VALUES ($1, $2, $3, $4, $5) RETURNING id";
+  const insert = "INSERT INTO users (firstname, lastname, email, password, type) VALUES ($1, $2, $3, $4, $5) RETURNING id";
 
   const values = [
     newUser.newUserFirstName,
@@ -71,7 +72,7 @@ app.post('/create-account', async (req, res) => {
     }
     res.redirect(redirectURL);
    } catch (err) {
-    
+    res.status(500).json({ message: 'An error occured in creating account: ' + err.message });
    }
 });
 
@@ -246,6 +247,10 @@ app.post('/doctor-schedule', async (req, res) =>{
   }
 });
 
+app.post('/success', (res) => {
+  res.sendFile(path.join(__dirname, '../views', 'login.html'));
+})
+
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
   const { rows: users } = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
@@ -256,7 +261,13 @@ app.post('/login', async (req, res) => {
       const passwordMatch = await bcrypt.compare(password, user.password);
       if (passwordMatch) {
         req.session.userId = user.id
-        res.json({ message: 'Login successful' }); // change logic for redirecting for either patient or doctor dash
+        req.session.userType = user.type
+        
+        if (req.session.userType === 'doctor') {
+          res.redirect('/doctor-dashboard');
+        } else if (req.session.userType === 'patient') {
+          res.redirect('/Home-page')
+        }
       } else {
         res.status(401).json({ message: 'Invalid password'});
       }
@@ -269,17 +280,7 @@ app.post('/login', async (req, res) => {
 });
 
 app.post('/booking-request', async (req, res) => {
-  const {patientId, doctorId} = req.body;
-
-  try {
-    const result = await pool.query(
-      "INSERT INTO booking_requests (patient_id, doctor_id) VALUES ($1, $2)",
-      [patientId, doctorId]
-    );
-    res.status(201).send(result.rows[0]);
-  } catch (err) {
-    res.status(500).send({ message: 'Error creating booking requests', err });
-  }
+  
 });
 
 app.get('/login', (req, res) => {
@@ -318,7 +319,23 @@ app.get('/doctor-schedule', (req, res) =>{
   res.sendFile(path.join(__dirname, '../views', 'doctor-schedule.html'));
 });
 
-app.get('/doctor-dashboard', async (req, res) => {
+function checkDoctor(req, res, next) {
+  if (user.session.userType === 'doctor') {
+    next();
+  } else {
+    res.status(403).json({ message: 'Access denied' });
+  }
+};
+
+function checkPatient(req, res, next) {
+  if (user.session.userType === 'patient') {
+    next();
+  } else {
+    res.status(403).json({ message: 'Access denied' });
+  }
+};
+
+app.get('/doctor-dashboard', checkDoctor, async (req, res) => {
   const userId = req.session.userId;
   const doctorQuery = "SELECT doctors.*, med_institutions.* FROM doctors JOIN med_institutions ON doctors.user_id = med_institutions.user_id WHERE doctors.user_id = $1";
 
@@ -328,6 +345,30 @@ app.get('/doctor-dashboard', async (req, res) => {
   } catch (err) {
     res.status(401).json({ message: 'Error ' + err.message });
   }
+});
+
+app.get('/Profile-page', checkPatient, async(req, res) => {
+  const profileQuery = "SELECT * FROM patients WHERE user_id = $1";
+  const userId = req.session.userId;
+
+  try {
+    const result = await pool.query(profileQuery, [userId]);
+    const patientProfile = res.json(result.rows[0]);
+  } catch (err) {
+    res.status(401).json({ message: 'Error' + err.message });
+  }
+});
+
+
+
+app.post('/logout', (req, res) => {
+  req.session.destroy(err => {
+    if (err) {
+      res.status(500).json({ message: 'Error logging out' });
+    } else {
+      res.redirect('/');
+    }
+  })
 });
 
 app.listen(port, () => {
