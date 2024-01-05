@@ -14,7 +14,7 @@
            <div class="row border rounded-5 p-3 bg-white shadow box-area">
                 <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #fff;">
                     <div class="featured-image mb-3">
-                    <img src="IMAGES/logo-main.png" class="img-fluid" style="width: 250px;">
+                    <img src="../IMAGES/logo-main.png" class="img-fluid" style="width: 250px;">
                     </div>
         
                     <p class="text-custom fs-2" style="font-family: 'Montserrat', sans-serif; font-weight: 600; margin-bottom: 5px;"> 
@@ -28,17 +28,17 @@
                 
                 <div class="col-md-6 right-box">
                     <div class="row align-items-center">
-                      <form id="docPersonalInfo" action="/your-form-handler" method="post">
+                      <form id="docPersonalInfo" action="/doctor-personal_info" method="post">
                         <div class="header-text mb-4">
                             <h2>Doctor Personal Information</h2>
                           </div>
                 
                           <div class="input-group mb-3">
-                              <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Degree/Title/Designation">
+                              <input type="text" id="degree_title_designation" name="degree_title_designation" class="form-control form-control-lg bg-light fs-6" placeholder="Degree/Title/Designation">
                           </div>
                 
                           <div class="input-group mb-3">
-                            <input type="year" class="form-control form-control-lg bg-light fs-6" placeholder="Year Started">
+                            <input type="number" id="year_started" name="year_started" class="form-control form-control-lg bg-light fs-6" placeholder="Year Started">
                           </div>
                 
                           <div class="select-btn">
@@ -49,57 +49,49 @@
                           </div>
                           <ul class="list-items">
                               <li class="item">
-                                  <span class="checkbox">
-                                      <i class="fa-solid fa-check check-icon"></i>
-                                  </span>
-                                  <span class="item-image">
-                                    <img src="IMAGES/1.png" style="width:50px" class="me-2" 
+                                  <input type="checkbox" id="general" name="specialties[]" value="general">
+                                  <label for="general">
+                                    <img src="../IMAGES/1.png" style="width:50px" class="me-2" 
                                     alt="General">
-                                  </span>
+                                  </label>
                               </li>
                               <li class="item">
-                                  <span class="checkbox">
-                                      <i class="fa-solid fa-check check-icon"></i>
-                                  </span>
-                                  <span class="item-image">
-                                    <img src="IMAGES/2.png" style="width:50px" class="me-2" 
+                                  <input type="checkbox" id="pediatrics" name="specialties[]" value="pediatrics">
+                                  <label for="pediatrics">
+                                    <img src="../IMAGES/2.png" style="width:50px" class="me-2" 
                                     alt="Pediatrics">
-                                  </span>
+                                  </label>
                               </li>
                               <li class="item">
-                                  <span class="checkbox">
-                                      <i class="fa-solid fa-check check-icon"></i>
-                                  </span>
-                                  <span class="item-image">
-                                    <img src="IMAGES/3.png" style="width:50px" class="me-2" 
+                                  <input type="checkbox" id="dentistry" name="specialties[]" value="dentistry">
+                                  <label for="dentistry">
+                                    <img src="../IMAGES/3.png" style="width:50px" class="me-2" 
                                     alt="Dentistry">
-                                  </span>
+                                  </label>
                               </li>
                               <li class="item">
-                                  <span class="checkbox">
-                                      <i class="fa-solid fa-check check-icon"></i>
-                                  </span>
-                                  <span class="item-image">
-                                    <img src="IMAGES/4.png" style="width:50px" class="me-2" 
+                                  <input type="checkbox" id="surgery" name="specialties[]" value="surgery">
+                                  <label for="surgery">
+                                    <img src="../IMAGES/4.png" style="width:50px" class="me-2" 
                                     alt="Surgery">
-                                  </span>
+                                  </label>
                               </li>
                           </ul>
                 
-                          <div class="input-group mb-3" id="subspecialties">
+                          <div class="input-group mb-3" id="subspecialties" name="subspecialties[]">
                               <!-- Subspecialties will be added here dynamically -->
                           </div>
                 
                           <!-- Add Subspecialty button -->
                           <div class="input-group mb-3">
                             <button class="btn btn-lg custom-btn-color w-100 fs-6 add-subspecialty-btn" onclick="addSubspecialty()">
-                                <img src="IMAGES/add.png" style="width:20px" class="me-2">
+                                <img src="../IMAGES/add.png" style="width:20px" class="me-2">
                                 <small>Add Subspecialty</small>
                             </button>
                           </div>
                           
                           <div class="input-group mb-3">
-                            <a href="doctor-validation.html" class="btn btn-lg custom-btn-color w-100 fs-6">Next</a>
+                            <button type="submit" class="btn btn-lg custom-btn-color w-100 fs-6">Next</button>
                           </div>
                           
                         </div>

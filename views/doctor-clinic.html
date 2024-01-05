@@ -21,7 +21,7 @@
           >
             <div class="featured-image mb-3">
               <img
-                src="IMAGES/logo-main.png"
+                src="../IMAGES/logo-main.png"
                 class="img-fluid"
                 style="width: 250px"
               />
@@ -51,7 +51,7 @@
           </div>
 
           <div class="col-md-6 right-box">
-            <form id="docClinic" action="/your-form-handler" method="post"></form>
+            <form id="docClinic" action="/doctor-clinic" method="post">
               <div class="row align-items-center">
                 <div class="header-text mb-4">
                   <h2>Clinic Information</h2>
@@ -62,7 +62,7 @@
                     type="text"
                     class="form-control form-control-lg bg-light fs-6"
                     placeholder="Clinic Name"
-                    name="clinicName"
+                    name="name"
                   />
                 </div>
 
@@ -71,7 +71,7 @@
                     type="text"
                     class="form-control form-control-lg bg-light fs-6"
                     placeholder="Accreditation No."
-                    name="accreditationNo"
+                    name="accreditation"
                   />
                 </div>
 
@@ -80,7 +80,7 @@
                     type="text"
                     class="form-control form-control-lg bg-light fs-6"
                     placeholder="Room/Wing/Building"
-                    name="clinicLocation"
+                    name="location"
                   />
                 </div>
 
@@ -89,7 +89,7 @@
                     type="text"
                     class="form-control form-control-lg bg-light fs-6"
                     placeholder="Address"
-                    name="clinicAddress"
+                    name="address"
                   />
                 </div>
 
@@ -98,7 +98,7 @@
                     type="text"
                     class="form-control form-control-lg bg-light fs-6"
                     placeholder="Postal Code"
-                    name="postalCode"
+                    name="postal"
                   />
                 </div>
 
@@ -111,7 +111,7 @@
                     type="text"
                     class="form-control form-control-lg bg-light fs-6"
                     placeholder="Contact Person Name"
-                    name="contactPersonName"
+                    name="contactName"
                   />
                 </div>
 
@@ -120,7 +120,7 @@
                     type="tel"
                     class="form-control form-control-lg bg-light fs-6"
                     placeholder="Phone Number"
-                    name="phoneNumber"
+                    name="phone"
                   />
                 </div>
 
@@ -134,13 +134,13 @@
                 </div>
 
                 <div class="input-group mb-3">
-                  <a
+                  <button
                     href="doctor-schedule.html"
                     class="btn btn-lg custom-btn-color w-100 fs-6"
                     type="submit"
                   >
                     Next
-                  </a>
+                  </button>
                 </div>
               </div>
             </form>

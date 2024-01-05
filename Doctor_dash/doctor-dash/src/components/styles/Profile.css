@@ -1,0 +1,165 @@
+/* PROFILE.CSS */
+
+/* Profile Details */
+.profile-details {
+  margin-top: 5px;
+  width: 150%;
+  padding-top: -60px;
+}
+.profile-card-body{
+  margin-left: 50px;
+  margin-top: -20px;
+  margin-bottom: 40px;
+}
+.doctor-image-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 40px;
+}
+.doctor-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.text {
+  margin-left: 15px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 70px;
+}
+
+
+/* Additional Information Box */
+.additional-info-box {
+  margin-top: 20px;
+}
+.hospi-text{
+  font-family: 'Times New Roman', Times, serif;
+  padding-top: 10px;
+}
+.clinic-text{
+  font-family: 'Times New Roman', Times, serif;
+  padding-top: 10px;
+}
+.clinic {
+  margin-left: 100px !important;
+  width: 80%;
+}
+.hospital {
+  width: 80%;
+}
+.hospi-title{
+  font-family: 'Times New Roman', Times, serif;
+}
+.clinic-title{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+/* Booking Requests */
+.booking {
+  margin-top: 20px;
+  width: 90%;
+  margin-bottom: 50px;
+}
+
+.bg-gray {
+  background-color: transparent; /* Change to your desired background color */
+}
+
+.list-group-item {
+  background-color: transparent;
+  border: none;
+}
+
+.name-column {
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+}
+
+.btn-link-d {
+  text-decoration: underline;
+  color: rgb(21, 20, 20) !important;
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
+  font-size: 13px;
+}
+
+.btn-link-d:hover {
+  text-decoration: underline;
+  color: #2778cf !important;
+}
+
+/* Card Styles */
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.card-text {
+  font-size: 14px;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+  .text,
+  .specialty,
+  .year,
+  .subspecialty {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .profile-details,
+  .additional-info-box,
+  .booking {
+    margin-top: 20px;
+  }
+}
+
+/* Custom Styling */
+@media (min-width: 768px) {
+  /* Adjust the margin-left to create space beside the existing content */
+  .profile-details {
+    margin-left: 200px;
+  }
+  .additional-info-box{
+    margin-left: 200px;
+  }
+  .booking{
+    margin-left: 200px;
+  }
+}
+
+.text-warning{
+  font-family: 'Times New Roman', Times, serif;
+  color: black !important;
+  font-size: 12px;
+}
+.text-danger{
+  font-family: 'Times New Roman', Times, serif;
+  color: black !important;
+  font-size: 12px;
+}
+.text-success{
+  font-family: 'Times New Roman', Times, serif;
+  color: black !important;
+  font-size: 12px;
+}
+
+.custom-btn {
+  background-color: transparent;
+  border: none;
+  padding: 5px; /* Remove any padding if needed */
+}
+.parent-cal {
+  /* Your styles for the ParentCal component */
+  padding-top: 20px; /* Adjust the margin-top value as needed */
+  /* Add other styles as needed */
+}
