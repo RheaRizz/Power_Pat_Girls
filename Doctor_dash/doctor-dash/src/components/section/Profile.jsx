@@ -27,7 +27,6 @@ const doctorProfile = {
   },
 };
 
-
 const Profile = () => {
   return (
     <div>
@@ -45,12 +44,12 @@ const Profile = () => {
                     <p className="card-text specialty">{`Specialty: ${doctorProfile.specialty}`}</p>
                     <p className="card-text year">{`Year Started: ${doctorProfile.yearStarted}`}</p>
                     <p className="card-text subspecialty">{`Subspecialty: ${doctorProfile.subspecialty}`}</p>
-
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
         <div className="row">
           <div className="col-md-6">
@@ -92,19 +91,4 @@ const Profile = () => {
   );
 };
 
-// const doctorProfile = {
-//     image: '../img/lowees.jpg',
-//   };
-  
-
-  const patients = [
-    { id: 1, name: 'Lois Kirsten Alonsagay', actions: ['Reject', 'Approve', 'Reschedule'] },
-    { id: 2, name: 'Lois Kirsten Alonsagay', actions: ['Reject', 'Approve', 'Reschedule'] },
-    { id: 3, name: 'Lois Kirsten Alonsagay', actions: ['Reject', 'Approve', 'Reschedule'] },
-    { id: 4, name: 'Lois Kirsten Alonsagay', actions: ['Reject', 'Approve', 'Reschedule'] },
-    { id: 5, name: 'Lois Kirsten Alonsagay', actions: ['Reject', 'Approve', 'Reschedule'] },
-    { id: 7, name: 'Lois Kirsten Alonsagay', actions: ['Reject', 'Approve', 'Reschedule'] },
-    { id: 8, name: 'Lois Kirsten Alonsagay', actions: ['Reject', 'Approve', 'Reschedule'] },
-  ];
-  
-export default Dashboard();
+export default Profile;
