@@ -26,22 +26,19 @@
 
 table {
   width: 100%;
+  overflow: hidden;
   border-collapse: collapse;
 }
 
 th, td {
-  padding: 12px;
-  text-align: start;
-  border-bottom: 1px solid #ddd;
+  padding: 10px;
   font-size: 15px;
   font-family: 'Times New Roman', Times, serif;
-  max-width: 100px;
 }
 
 th {
   background-color: #479ade;
   color: white;
-  font-size: 16px;
   font-family: 'Times New Roman', Times, serif;
   text-align: center;
 }
@@ -51,7 +48,7 @@ tbody tr:hover {
 }
 
 /* Additional styles for buttons */
-button {
+.action-button {
   background-color: #479ade00;
   color: #479ade;
   padding: 8px 16px;
@@ -61,6 +58,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.action-button:hover {
   color: #306b9c;
 }

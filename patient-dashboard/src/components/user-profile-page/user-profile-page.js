@@ -44,8 +44,8 @@ function UserProfile() {
       status: "Approved",
 			'Action': (
 				<div>
-					<button onClick={() => alert("Cancel")}>Cancel</button>
-					<button onClick={() => alert("Reschedule")}>Reschedule</button>
+					<button className="action-button" onClick={() => alert("Cancel")}>Cancel</button>
+					<button className="action-button" onClick={() => alert("Reschedule")}>Reschedule</button>
 				</div>
 			)
     },
@@ -58,8 +58,8 @@ function UserProfile() {
       status: "Requested for a Reschedule",
       'Action': (
         <div className="button">
-          <button onClick={() => alert("Cancel")}>Cancel</button>
-          <button onClick={() => alert("Reschedule")}>Reschedule</button>
+          <button className="action-button" onClick={() => alert("Cancel")}>Cancel</button>
+          <button className="action-button" onClick={() => alert("Reschedule")}>Reschedule</button>
         </div>
       )
     }

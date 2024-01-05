@@ -8,13 +8,13 @@ function Appointment() {
       id: "1",
       doctor: "Dr. John Patrick Pineda",
       clinic: "Forest Health General Hospital",
-      date: "6/26/2024",
+      date: "6/26/24",
       time: "10:00",
       status: "Approved",
 			'Action': (
 				<div>
-					<button onClick={() => alert("Cancel")}>Cancel</button>
-					<button onClick={() => alert("Reschedule")}>Reschedule</button>
+					<button className="action-button" onClick={() => alert("Cancel")}>Cancel</button>
+					<button className="action-button" onClick={() => alert("Reschedule")}>Reschedule</button>
 				</div>
 			)
     },
@@ -27,8 +27,8 @@ function Appointment() {
       status: "Requested for a Reschedule",
       'Action': (
         <div className="button">
-          <button onClick={() => alert("Cancel")}>Cancel</button>
-          <button onClick={() => alert("Reschedule")}>Reschedule</button>
+          <button className="action-button" onClick={() => alert("Cancel")}>Cancel</button>
+          <button className="action-button" onClick={() => alert("Reschedule")}>Reschedule</button>
         </div>
       )
     }
@@ -109,6 +109,18 @@ function Appointment() {
     );
   };
 
+  const renderHistoryAppointmentsRow = () => {
+    return (
+      <tr>
+        <td>{historyAppointments[0].id}</td>
+        <td>{historyAppointments[0].doctor}</td>
+        <td>{historyAppointments[0].clinic}</td>
+        <td>{historyAppointments[0].date}</td>
+        <td>{historyAppointments[0].time}</td>
+      </tr>
+    );
+  };
+
   return (
     <div className="background-3">
       <div className="section">
@@ -127,6 +139,7 @@ function Appointment() {
           <TablePage
             appointments={historyAppointments}
             renderTableHead={renderHistoryAppointmentsHead}
+            renderTableRows={renderHistoryAppointmentsRow}
           />
         </div>
       </div>
