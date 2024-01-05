@@ -11,6 +11,7 @@ import Dentalcare from './components/pages/Dentalcare';
 
 
 function App() {
+
   return (
     <Router>
       <div>

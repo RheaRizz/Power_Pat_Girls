@@ -3,7 +3,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import '../styles/Profile.css';
 
 function Dashboard() {
-  const [doctorInfo, setDoctorInfo] = useState(null);
+  const [doctorInfo, setDoctorInfo] = useState({});
   const [patients, setPatients] = useState([]);
 
   useEffect(() => {
