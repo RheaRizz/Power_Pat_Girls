@@ -35,7 +35,7 @@ function Sidebar() {
         </li>
   
         <li className="nav-item">
-          <Link to="/logout" className="nav-link">
+          <Link to="http://localhost:5000/login" className="nav-link">
             <i className="bi bi-box-arrow-right"></i>
             <span> Logout </span>
           </Link>
