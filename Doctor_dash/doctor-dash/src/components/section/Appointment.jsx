@@ -5,6 +5,7 @@ import '../styles/Profile.css';
 import { Link } from 'react-router-dom';
 
 
+
 function Appointment() {
     const [patients, setPatients] = useState([
     { id: 1, name: 'Lois Kirsten Alonsagay', actions: ['Reject', 'Approve', 'Reschedule'] , date: '2023-12-24T08:30'},
@@ -17,6 +18,7 @@ function Appointment() {
 
     
     const [rescheduled, setRescheduled] = useState([]);
+    
     const handleRescheduleClick = (patientId) => {
       setRescheduled((prevRescheduled) => [...prevRescheduled, patientId]);
     };
@@ -29,6 +31,7 @@ function Appointment() {
     const handleApproveClick = (patientId) => {
       const approvedPatient = patients.find((patient) => patient.id === patientId);
       const appointmentDateTime = approvedPatient.date;
+      
       setRescheduled((prevAppointments) => [
         ...prevAppointments,
         { ...approvedPatient, appointmentDateTime },

@@ -8,10 +8,10 @@ import '../styles/Sidebar.css';
 
 function Sidebar() {
   const location = useLocation();
-  const isEditProfilePage = location.pathname === '/edit-profile';
+  const isLogoutPage = location.pathname === '/logout';
   
 
-  if (isEditProfilePage) {
+  if (isLogoutPage) {
     return null; 
   }
 
@@ -33,13 +33,7 @@ function Sidebar() {
           </Link>
         </li>
         </li>
-        <li className="nav-item">
-          <Link to="/patient" className="nav-link">
-            <i className="bi bi bi-person-add"></i>
-            <span> Patient </span>
-          </Link>
-        </li>
-
+  
         <li className="nav-item">
           <Link to="/logout" className="nav-link">
             <i className="bi bi-box-arrow-right"></i>

@@ -5,7 +5,7 @@ import '../styles/Profile.css';
 const doctorProfile = {
   firstName: 'Lois Kirsten',
   lastName: 'Alonsagay',
-  image: require('../img/lowees.jpg'),
+  image: require('../img/doc-profile.png'),
   degree: 'MD',
   specialty: 'General Medicine',
   yearStarted: '2010',
@@ -37,7 +37,7 @@ const Profile = () => {
               <div className="card">
                 <div className="profile-card-body d-flex align-items-center">
                   <div className="doctor-image-container rounded-circle overflow-hidden">
-                    <img src={require('../img/lowees.jpg')} alt="Doctor" className="doctor-image" />
+                    <img src={require('../img/doc-profile.png')} alt="Doctor" className="doctor-image" />
                   </div>
                   <div className="text ml-5">
                     <p className="card-text name">{`Dr. ${doctorProfile.firstName} ${doctorProfile.lastName}, ${doctorProfile.degree}`}</p>
