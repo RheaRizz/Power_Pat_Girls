@@ -23,6 +23,21 @@ export const SidebarData = [
 	{
 		title: "Log Out",
     icon: <DvrIcon />,
-    link: "/"
+    clickHandler: async () => {
+			try {
+				const response = await fetch('http://localhost:5000/logout', {
+					method: 'POST',
+					credentials: 'include',
+				});
+
+				if (response.ok) {
+					window.location.href = '/login';
+				} else {
+					throw new Error("Failed to logout");
+				}
+			} catch (error) {
+				console.error(error);
+			}
+		}
 	} 
 ]

@@ -114,7 +114,7 @@ function UserProfile() {
         </div>
         <div className="upcoming-appointments">
           <div className="header-2">
-            <h2 className="header-text-2">Upcoming Appointments Information</h2>
+            <h2 className="header-text-2">Pending Appointments</h2>
           </div>
           <div className="table-content-1">
             <TablePage 

@@ -352,7 +352,7 @@ app.get("/doctor-schedule", (req, res) => {
 });
 
 function checkDoctor(req, res, next) {
-	if (user.session.userType === "doctor") {
+	if (req.session.userType === "doctor") {
 		next();
 	} else {
 		res.status(403).json({ message: "Access denied" });
@@ -360,7 +360,7 @@ function checkDoctor(req, res, next) {
 }
 
 function checkPatient(req, res, next) {
-	if (user.session.userType === "patient") {
+	if (req.session.userType === "patient") {
 		next();
 	} else {
 		res.status(403).json({ message: "Access denied" });
@@ -397,8 +397,8 @@ app.post("/logout", (req, res) => {
 		if (err) {
 			res.status(500).json({ message: "Error logging out" });
 		} else {
-			res.redirect("/");
-		}
+      res.redirect('/login');
+    }
 	});
 });
 
