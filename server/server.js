@@ -287,9 +287,9 @@ app.post("/login", async (req, res) => {
 				req.session.userType = user.type;
 
 				if (req.session.userType === "doctor") {
-					res.redirect("/doctor-dashboard");
+					res.redirect("http://localhost:3000/doctor-dashboard");
 				} else if (req.session.userType === "patient") {
-					res.redirect("/Home-page");
+					res.redirect("http://localhost:3000/Home-page");
 				}
 			} else {
 				res.status(401).json({ message: "Invalid password" });
