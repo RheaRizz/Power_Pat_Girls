@@ -8,21 +8,21 @@ export const SidebarData = [
 	{
 		title: "Home",
     icon: <HomeIcon />,
-    link: "/Home-page"    
+    link: "/home"    
 	},
 	{
 		title: "Profile",
     icon: <PersonIcon />,
-    link: "/Profile-page"    
+    link: "/user-profile-page"    
 	},
 	{
 		title: "Appointment",
     icon: <BookOnlineIcon />,
-    link: "/Appointment-records"
+    link: "/appointments"
   },
 	{
-		title: "Medical Records",
+		title: "Log Out",
     icon: <DvrIcon />,
-    link: "/medical-records"
+    link: "/"
 	} 
 ]
