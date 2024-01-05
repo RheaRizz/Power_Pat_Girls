@@ -2,7 +2,7 @@ import React from 'react';
 import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
 import BookOnlineIcon from '@mui/icons-material/BookOnline';
-import DvrIcon from '@mui/icons-material/Dvr';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 export const SidebarData = [
 	{
@@ -22,7 +22,7 @@ export const SidebarData = [
   },
 	{
 		title: "Log Out",
-    icon: <DvrIcon />,
+    icon: <LogoutIcon />,
     link: "/"
 	} 
 ]
