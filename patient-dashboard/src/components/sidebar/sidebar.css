@@ -1,0 +1,70 @@
+.Sidebar {
+  height: 100vh;
+  width: 300px;
+  background-color: rgb(255, 255, 255);
+  border: 0.5px solid rgb(237, 237, 237);
+  padding-top: 20px; /* Add padding at the top for the logo */
+  position: fixed;
+}
+
+.logo {
+  margin-top: -10px;
+  color: rgb(124, 129, 133); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo img {
+  max-height: 100px; /* Adjust the maximum height as needed */
+  width: 50px; /* Maintain the aspect ratio */
+}
+
+.logo h2 {
+  margin: 5%;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+}
+
+.SidebarList {
+  height: auto; /* Set to auto to adjust to the height of its contents */
+  padding: 0;
+  width: 100%;
+  flex-grow: 1; /* Allow SidebarList to grow and take up available space */
+}
+
+.SidebarList .row {
+  width: 100%;
+  height: 50px;
+  list-style-type: none;
+  margin: 0%;
+  display: flex;
+  flex-direction: row;
+  color: #acafb1;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+}
+
+.SidebarList .row:hover {
+  cursor: pointer;
+  background-color: #ececec;
+  border-radius: 10px;
+}
+
+.SidebarList #active {
+  background-color: #ececec;
+  border-radius: 10px;
+}
+
+.row #icon {
+  flex: 30%;
+  display: grid;
+  place-items: center;
+}
+
+.row #title {
+  flex: 70%;
+}

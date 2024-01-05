@@ -5,10 +5,10 @@ import logoImage from '../img/logo-main.png';
 
 function Header() {
   const location = useLocation();
-  const isEditProfilePage = location.pathname === '/edit-profile';
+  const isLogoutPage = location.pathname === '/logout';
 
-  if (isEditProfilePage) {
-    return null; // Don't render the header on the EditProfile page
+  if (isLogoutPage) {
+    return null; 
   }
 
   return (

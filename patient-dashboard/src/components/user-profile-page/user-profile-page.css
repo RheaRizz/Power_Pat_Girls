@@ -1,0 +1,176 @@
+/* user-profile-page.css */
+
+.background-2 {
+  height: auto;
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  margin-left: 320px;
+  margin-top: 100px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* First column: user info and user contact details */ 
+
+.user-info,
+.user-contact,
+.edit-profile-button-1,
+.medical-info {
+  margin-bottom: 5%;
+}
+
+.user-info,
+.user-contact {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.header-2 {
+  padding: 5px;
+}
+
+.header-text-2 {
+  margin: 10px;
+}
+
+.user-info .table-content-1,
+.user-contact .table-content-1 {
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-container {
+  width: 50%;
+}
+
+.edit-profile-button-1 {
+  background-color: #479ade00;
+  color: #479ade;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-profile-button-1:hover {
+  color: #306b9c;
+}
+
+/* Second column: user med info and upcoming appointments of user */
+
+.medical-info,
+.upcoming-appointments {
+  width: 100%;
+}
+
+
+.medical-info {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.medical-info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.medical-info .table-content-1 {
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.medical-info .header-text-2 {
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 15px;
+}
+
+.medical-info-table th,
+.medical-info-table td {
+  padding: 10px;
+  font-size: 15px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.medical-info-table td {
+  max-width: 100px;
+}
+.medical-info-table th {
+  background-color: #479ade;
+  color: white;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+}
+
+.upcoming-appointments {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.upcoming-appointments table {
+  overflow: hidden;
+  border-collapse: collapse;
+}
+
+.upcoming-appointments .table-content-1 {
+  overflow: hidden;
+  background-color: white;
+}
+
+.upcoming-appointments .header-text-2 {
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 15px;
+}
+
+.upcoming-appointments th,
+.upcoming-appointments td {
+  padding: 10px;
+  font-size: 15px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.upcoming-appointments th {
+  background-color: #479ade;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+}
+
+.upcoming-appointments td {
+  max-width: 100px;
+}
+
+.upcoming-appointments tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+@media screen and (max-width: 768px) {
+  .background-2 {
+    margin-left: 0;
+  }
+
+  .user-profile-column-1,
+  .user-profile-column-2 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .button-container {
+    width: 100%; /* Make the button container full width on small screens */
+  }
+}

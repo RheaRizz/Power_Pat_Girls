@@ -1,0 +1,44 @@
+.confirm-modal {
+    position: fixed;
+    top: 250px; /* Adjust this value to position the modal at the top of the viewport */
+    left: 55%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 200px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    z-index: 100; /* Set a higher z-index value */
+  }
+
+  .confirm-modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .confirm-modal-buttons {
+    margin-top: 15px;
+  }
+  
+  .confirm-modal-buttons button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .confirm-modal-buttons button.close-btn {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  .confirm-modal-buttons button.done-btn {
+    background-color: #4CAF50;
+    color: white;
+  }
