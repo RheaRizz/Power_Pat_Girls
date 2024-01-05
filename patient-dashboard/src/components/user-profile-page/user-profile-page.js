@@ -4,6 +4,7 @@ import InfoPage from "./user-info";
 import ContactPage from "./user-contact";
 import MedicalPage from "./medical-info";
 import TablePage from "../appointment-section/appointment-content";
+import CancelAppointment from "./cancel-appointment";
 
 function UserProfile() {
   const [userInfo, setUserInfo] = useState([
@@ -25,7 +26,7 @@ function UserProfile() {
 
   const [userMedInfo, setUserMedInfo] = useState([
     {
-      height:"165 cm",
+      height: "165 cm",
       weight: "53 kg",
       blood: "A+",
       condition: "Bowel incontinence",
@@ -34,7 +35,19 @@ function UserProfile() {
     }
   ]);
 
-  const [upcomingAppointments, setUpcomingAppointments] =  useState([
+  const [showCancelPopup, setCancelPopup] = useState(false);
+  const [selectedAppointment, setSelectedAppointment] = useState(null);
+
+  const handleCancelClick = (appointment) => {
+    setCancelPopup(true);
+    setSelectedAppointment(appointment);
+  };
+
+  const handleCloseCancel = () => {
+    setCancelPopup(false);
+  };
+
+  const [upcomingAppointments, setUpcomingAppointments] = useState([
     {
       id: "1",
       doctor: "Dr. John Patrick Pineda",
@@ -42,12 +55,12 @@ function UserProfile() {
       date: "6/26/2024",
       time: "10:00",
       status: "Approved",
-			'Action': (
-				<div>
-					<button className="action-button" onClick={() => alert("Cancel")}>Cancel</button>
-					<button className="action-button" onClick={() => alert("Reschedule")}>Reschedule</button>
-				</div>
-			)
+      'Action': (
+        <div>
+          <button className="action-button" onClick={() => handleCancelClick(upcomingAppointments[0])}>Cancel</button>
+          <button className="action-button" onClick={handleCancelClick}>Reschedule</button>
+        </div>
+      )
     },
     {
       id: "2",
@@ -57,9 +70,9 @@ function UserProfile() {
       time: "16:00",
       status: "Requested for a Reschedule",
       'Action': (
-        <div className="button">
-          <button className="action-button" onClick={() => alert("Cancel")}>Cancel</button>
-          <button className="action-button" onClick={() => alert("Reschedule")}>Reschedule</button>
+        <div>
+          <button className="action-button" onClick={() => handleCancelClick(upcomingAppointments[1])}>Cancel</button>
+          <button className="action-button" onClick={handleCancelClick}>Reschedule</button>
         </div>
       )
     }
@@ -117,13 +130,14 @@ function UserProfile() {
             <h2 className="header-text-2">Pending Appointments</h2>
           </div>
           <div className="table-content-1">
-            <TablePage 
-            appointments={upcomingAppointments}
-            renderTableHead={renderUpcomingAppointmentsHead} 
+            <TablePage
+              appointments={upcomingAppointments}
+              renderTableHead={renderUpcomingAppointmentsHead}
             />
           </div>
         </div>
       </div>
+      {showCancelPopup && <CancelAppointment handleCloseCancel={handleCloseCancel} selectedAppointment={selectedAppointment} />}
     </div>
   )
 }
