@@ -1,5 +1,5 @@
 // App.js
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from './components/pages/Header'; 
 import "./App.css"; 
 import Home from './components/pages/Home';
@@ -11,6 +11,7 @@ import Dentalcare from './components/pages/Dentalcare';
 
 
 function App() {
+
   return (
     <Router>
       <div>
