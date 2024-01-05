@@ -85,7 +85,7 @@ function UserProfile() {
       'Action': (
         <div>
           <button className="action-button" onClick={() => handleCancelClick(upcomingAppointments[1])}>Cancel</button>
-          <button className="action-button" onClick={handleReschedClick}>Reschedule</button>
+          <button className="action-button" onClick={() => handleReschedClick(upcomingAppointments[1])}>Reschedule</button>
         </div>
       )
     }
