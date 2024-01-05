@@ -1,0 +1,11 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
