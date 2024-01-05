@@ -10,7 +10,7 @@
   align-items: center;
   z-index: 999;
 }
-  
+
 .popup-content {
   background: #fff;
   padding: 20px;
@@ -18,8 +18,9 @@
   max-width: 600px;
   width: 100%;
   position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-  
+
 .close-icon {
   position: absolute;
   top: 10px;
@@ -29,14 +30,35 @@
   color: #333;
 }
 
+.reschedule-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.date-picker-container,
+.time-picker-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
 .resched-button {
-  background-color: #479ade00;
-  color: #479ade;
+  background-color: #479ade;
+  color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
 .resched-button:hover {
-  color: #306b9c;
+  background-color: #306b9c;
 }

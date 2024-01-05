@@ -5,6 +5,7 @@ import ContactPage from "./user-contact";
 import MedicalPage from "./medical-info";
 import TablePage from "../appointment-section/appointment-content";
 import CancelAppointment from "./cancel-appointment";
+import RescheduleAppointment from "./reschedule-appointment";
 
 function UserProfile() {
   const [userInfo, setUserInfo] = useState([
@@ -47,6 +48,18 @@ function UserProfile() {
     setCancelPopup(false);
   };
 
+  const [showReschedPopup, setReschedPopup] = useState(false);
+  const [selectedSchedule, setSelectedSchedule] = useState(null);
+
+  const handleReschedClick = (appointment) => {
+    setReschedPopup(true);
+    setSelectedAppointment(appointment);
+  };
+
+  const handleCloseResched = () => {
+    setReschedPopup(false);
+  };
+
   const [upcomingAppointments, setUpcomingAppointments] = useState([
     {
       id: "1",
@@ -58,7 +71,7 @@ function UserProfile() {
       'Action': (
         <div>
           <button className="action-button" onClick={() => handleCancelClick(upcomingAppointments[0])}>Cancel</button>
-          <button className="action-button" onClick={handleCancelClick}>Reschedule</button>
+          <button className="action-button" onClick={() => handleReschedClick(upcomingAppointments[0])}>Reschedule</button>
         </div>
       )
     },
@@ -72,7 +85,7 @@ function UserProfile() {
       'Action': (
         <div>
           <button className="action-button" onClick={() => handleCancelClick(upcomingAppointments[1])}>Cancel</button>
-          <button className="action-button" onClick={handleCancelClick}>Reschedule</button>
+          <button className="action-button" onClick={handleReschedClick}>Reschedule</button>
         </div>
       )
     }
@@ -138,6 +151,7 @@ function UserProfile() {
         </div>
       </div>
       {showCancelPopup && <CancelAppointment handleCloseCancel={handleCloseCancel} selectedAppointment={selectedAppointment} />}
+      {showReschedPopup && <RescheduleAppointment handleCloseResched={handleCloseResched} selectedAppointment={selectedAppointment} />}
     </div>
   )
 }

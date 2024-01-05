@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import TimePicker from "react-time-picker";
 import './reschedule-appointment.css';
 
-function RescheduleAppointment({ handleCloseReschedule, selectedAppointment, handleRescheduleConfirmation }) {
+function RescheduleAppointment({ handleCloseResched, selectedAppointment, handleRescheduleConfirmation }) {
   const [selectedDate, setSelectedDate] = useState(new Date(selectedAppointment.date));
   const [selectedTime, setSelectedTime] = useState(selectedAppointment.time);
 
@@ -18,7 +18,7 @@ function RescheduleAppointment({ handleCloseReschedule, selectedAppointment, han
   return (
     <div className="popup-overlay">
       <div className="popup-content">
-        <span className="close-icon" onClick={handleCloseReschedule}>
+        <span className="close-icon" onClick={handleCloseResched}>
           &times;
         </span>
         <h2>Reschedule Appointment</h2>
@@ -48,7 +48,7 @@ function RescheduleAppointment({ handleCloseReschedule, selectedAppointment, han
             />
           </div>
         </div>
-        <button className="resched-button" onClick={() => handleRescheduleConfirmation(selectedDate, selectedTime)}>
+        <button className="resched-button" onClick={() => handleRescheduleConfirmation()}>
           Confirm Reschedule
         </button>
       </div>
