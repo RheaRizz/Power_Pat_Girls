@@ -9,28 +9,14 @@ function Appointment() {
       doctor: "Dr. John Patrick Pineda",
       clinic: "Forest Health General Hospital",
       date: "6/26/24",
-      time: "10:00",
-      status: "Approved",
-			'Action': (
-				<div>
-					<button className="action-button" onClick={() => alert("Cancel")}>Cancel</button>
-					<button className="action-button" onClick={() => alert("Reschedule")}>Reschedule</button>
-				</div>
-			)
+      time: "10:00"
     },
     {
       id: "2",
       doctor: "Dr. Lois Kirsten Alonsagay",
       clinic: "Fortuna Medical Clinic",
       date: "1/4/24",
-      time: "16:00",
-      status: "Requested for a Reschedule",
-      'Action': (
-        <div className="button">
-          <button className="action-button" onClick={() => alert("Cancel")}>Cancel</button>
-          <button className="action-button" onClick={() => alert("Reschedule")}>Reschedule</button>
-        </div>
-      )
+      time: "16:00"
     }
   ]);
 
@@ -73,8 +59,6 @@ function Appointment() {
         <th>Clinic Location</th>
         <th>Date</th>
         <th>Time</th>
-        <th>Status</th>
-        <th>Action</th>
       </tr>
     )
   };
