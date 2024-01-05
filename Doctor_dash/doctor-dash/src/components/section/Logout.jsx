@@ -1,24 +1,13 @@
-import React, {useState} from 'react'
-import Modal from './Modal';
+import React from 'react'
+
 
 
 
 function Logout () {
+    <div>
 
-  const [openModal, setOpenModal] = useState(false)
-  return (
-    <div className='confirm'>
-        <button 
-        className='openModalBtn' 
-        onClick={() => 
-        {setOpenModal(true)
-        }}
-        >
-          Lois Kirsten Alonsagay
-        </button>
-        {openModal && <Modal closeModal={setOpenModal}/>}
-        </div>
-  )
+    </div>
+
 }
 
 export default Logout;
