@@ -1,0 +1,40 @@
+/*PATIENT.CSS*/
+
+.patient-booking {
+    padding: 15px;
+    background-color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    width: 100%;
+    margin-left: -200px;  /* Consider removing this line */
+  }
+  .list-group-item .spacer {
+    margin-right: 10px; /* Adjust the margin to your preference */
+  }
+  
+  @media (max-width: 768px) {
+    .patient-booking{
+      width: 120%;
+      max-height: auto;
+      margin-left: -5px;
+      margin-right: 10px;
+      margin-bottom: 50px;
+    }
+    .name-column{
+      margin-right: 78px;
+    }
+  }
+  @media (min-width: 769px) {
+    .patient-booking {
+      width: 90%;
+      max-height: auto;
+      overflow-y: auto; 
+      margin-left: 150px;
+    }
+  
+    .list-group-item {/* Adjust the max-height property to your preference */
+      font-size: 12px;
+      display: flex;
+      flex-direction: row;
+    }
+  }

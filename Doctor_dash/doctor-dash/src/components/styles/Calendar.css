@@ -1,0 +1,33 @@
+
+.popoverStyle{
+    z-index: 99999 !important;
+  }
+  a {
+    color: #212529 !important;
+  }
+
+  #calendarContainer {
+    width: 90%; /* Adjust as needed */
+    margin: 0 auto;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 200px;
+    overflow: visible;
+  }
+  .today custom-today-icon{
+    border: none;
+  }
+
+  /* Responsive styles for smaller screens */
+  @media (max-width: 768px) {
+    #calendarContainer {
+      width: 110%;
+    }
+  }
+  
+  .calendar-box {
+    border: 1px solid #ccc; /* Customize the border style as needed */
+    padding: 30px; /* Add padding for spacing inside the box */
+    border-radius: 8px; /* Add border-radius for rounded corners */
+  }
+  
+  

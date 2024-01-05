@@ -21,7 +21,7 @@
         >
           <div class="featured-image mb-3">
             <img
-              src="IMAGES/logo-main.png"
+              src="../IMAGES/logo-main.png"
               class="img-fluid"
               style="width: 250px"
             />
@@ -51,7 +51,7 @@
         </div>
 
         <div class="col-md-6 right-box">
-          <form id="patientForm" action="/your-form-handler" method="post"> 
+          <form id="patientForm" action="/patient-personal_info" method="post"> 
             <div class="row align-items-center">
               <div class="header-text mb-4">
                 <h2>Patient Information</h2>
@@ -63,12 +63,12 @@
                 </label>
                 <select
                   class="form-select form-select-lg bg-light fs-6 select-with-margin"
-                  id="genderTypeSelect"
-                  name="genderType"
+                  id="gender"
+                  name="gender"
                 >
-                  <option value="patient">Male</option>
-                  <option value="doctor">Female</option>
-                  <option value="doctor">LGBTQIA+</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="lgbtqia+">LGBTQIA+</option>
                 </select>
               </div>
 
@@ -78,6 +78,7 @@
                   type="date"
                   class="form-control form-control-lg bg-light fs-6"
                   id="birthday"
+                  name="birthday"
                   placeholder="Birthday"
                 />
               </div>
@@ -90,6 +91,8 @@
                 <input
                   type="tel"
                   class="form-control form-control-lg bg-light fs-6"
+                  id="phone"
+                  name="phone"
                   placeholder="Phone Number"
                 />
               </div>
@@ -102,6 +105,8 @@
                 <input
                   type="text"
                   class="form-control form-control-lg bg-light fs-6"
+                  id="province"
+                  name="province"
                   placeholder="Province"
                 />
               </div>
@@ -110,6 +115,8 @@
                 <input
                   type="text"
                   class="form-control form-control-lg bg-light fs-6"
+                  id="city_municipality"
+                  name="city_municipality"
                   placeholder="City / Municipality"
                 />
               </div>
@@ -118,6 +125,8 @@
                 <input
                   type="text"
                   class="form-control form-control-lg bg-light fs-6"
+                  id="barangay"
+                  name="barangay"
                   placeholder="Barangay"
                 />
               </div>
@@ -126,6 +135,8 @@
                 <input
                   type="text"
                   class="form-control form-control-lg bg-light fs-6"
+                  id="postal"
+                  name="postal"
                   placeholder="Postal Code"
                 />
               </div>

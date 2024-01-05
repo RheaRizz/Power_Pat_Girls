@@ -1,0 +1,52 @@
+.logo-img {
+    max-height: 40px;
+    max-width: 40px;
+  }
+  
+  .header-container {
+    margin-left: 20px;
+  }
+  .logo-text {
+    margin-left: 5px;
+    font-size: 1.1rem;
+    color: black;
+    font-family:'Times New Roman', Times, serif;
+  }
+
+.sidebar {
+    background-color: #ffffff;
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding-top: 100px;
+    position: fixed;
+}
+.nav-link {
+    color: #383737;
+    margin-left: 10px;
+  }
+  .nav-link i {
+    margin-right: 5px;
+  }
+  .nav-link span {
+   font-size: 18px;
+   color: #383737;
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 80px;
+      position: fixed;
+    }
+    .logo-text {
+      display: none;
+    }
+    .nav-link span {
+      display: none;
+  
+    }
+    .nav-link i {
+      margin-left: auto;
+      font-size: 1rem;
+    }
+  }

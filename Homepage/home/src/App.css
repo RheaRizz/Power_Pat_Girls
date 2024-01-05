@@ -1,0 +1,137 @@
+/*RESPONSIVENESS*/
+
+@media (max-width: 767px) {
+  .custom-card{
+    width: 90%;
+  }
+  .doctor-name{
+    white-space: nowrap;
+  }
+  .row.align-items-center {
+    flex-direction: column;
+  }
+  .col-md-6.col-sm-12.mb-3.mb-md-0.text-center {
+    text-align: left !important;
+    margin-top: -25px ;
+  }
+
+  .book-button {
+    text-align: left !important; /* Align buttons to the left */
+  }
+
+  .profile-pic {
+      width: 100px; /* Adjust the width for smaller screens */
+      height: 100px; /* Adjust the height for smaller screens */
+      margin-bottom: -10px; /* Adjust margin for better spacing */
+      margin-left: 50px;
+    }
+  .d-flex.justify-content-end {
+    justify-content: flex-start !important; /* Align buttons to the left */
+    margin-top: -30px ;
+  }
+}
+
+@media (min-width: 320px) {
+  .doctor-name{
+    white-space: nowrap;
+  }
+  .profile-text{
+    margin-left: -25px;
+  }
+  .profile-time{
+    margin-left: -25px;
+    margin-bottom: 10px;
+  }
+  .profile-pic {
+    margin-top: 20px;
+  }
+  .view-book-button{
+    margin-left: -25px;
+  }
+}
+@media (min-width: 375px) {
+  .doctor-name{
+    white-space: nowrap;
+  }
+  .profile-text{
+    margin-right: 135px;
+  }
+}
+
+@media (min-width: 425px) {
+  .doctor-name{
+    white-space: nowrap;
+  }
+  .profile-text{
+    margin-left: -1px;
+    margin-top: 10px;
+  }
+  .profile-pic {
+    width: 120px; /* Adjust the width for smaller screens */
+    height: 120px; /* Adjust the height for smaller screens */
+}
+  .profile-time{
+    margin-left: -1px;
+    margin-bottom: 10px;
+  }
+  .view-book-button{
+    margin-left: -5px;
+  }
+}
+@media (min-width: 768px) {
+  .doctor-name{
+    white-space: nowrap;
+  }
+  .profile-text{
+    margin-left: -55px;
+    margin-top: 70px;
+  }
+  .profile-time{
+    margin-top: 60px;
+
+  }
+}
+
+@media (min-width: 1024px) {
+  .custom-card{
+    width: 80%;
+  }
+  .doctor-name{
+    white-space: nowrap;
+  }
+  .profile-text{
+    margin-left: -125px;
+    margin-top: 70px;
+  }
+  .profile-time{
+    margin-left: -75px;
+    margin-top: 68px;
+  }
+}
+@media (min-width: 1440px) {
+  .doctor-name{
+    white-space: nowrap;
+  }
+  .profile-text{
+    margin-left: -220px;
+    margin-top: 70px;
+  }
+  .profile-time{
+    margin-left: 70px;
+  }
+}
+@media (min-width: 2000px) {
+  .custom-card{
+    width: 70%;
+  }
+  .doctor-name{
+    white-space: nowrap;
+  }
+  .profile-text{
+    margin-left: -470px;
+    margin-top: 70px;
+  }
+  .profile-time{
+    margin-left: 440px;
+  }
+}
