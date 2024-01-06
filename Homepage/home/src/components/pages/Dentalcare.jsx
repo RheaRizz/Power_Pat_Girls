@@ -22,17 +22,15 @@ const Dentistry = () => {
   }, []);
 
   const handleViewProfile = (userId) => {
-    // Add logic to navigate to the user's profile page or display profile information
     alert(`Viewing profile of user with ID: ${userId}`);
   };
 
   const handleBookNow = (userId) => {
-    // Add logic to initiate the booking process
     alert(`Booking now for user with ID: ${userId}`);
   };
 
   return (
-    <div>
+    <div className='container' style={{marginTop: '100px'}}>
       <h1>Dentistry</h1>
       <table>
         <thead>
