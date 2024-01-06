@@ -7,22 +7,22 @@ const doctorProfile = {
   lastName: 'Alonsagay',
   image: require('../img/doc-profile.png'),
   degree: 'MD',
-  specialty: 'General Medicine',
-  yearStarted: '2010',
-  subspecialty: 'Cardiology',
+  category: 'General Medicine',
+  yearStarted: '2020',
+  specialty: 'Cardiology',
 
   hospital: {
-    name: 'XYZ Hospital',
+    name: "Saint Paul's Hospital",
     accreditationNumber: '123456',
-    roomWingBuilding: 'Room 101, Wing A, Building B',
-    address: '123 Medical Street',
+    roomWingBuilding: 'Room 300, Wing B, Building C',
+    address: 'Iloilo, Philippines',
     postalCode: 'ABCDE',
   },
   clinic: {
-    name: 'XYZ Hospital',
+    name: 'Cardio Clinic',
     accreditationNumber: '123456',
-    roomWingBuilding: 'Room 101, Wing A, Building B',
-    address: '123 Medical Street',
+    roomWingBuilding: 'Room 300, Wing B, Building C',
+    address: 'Iloilo, Philippines',
     postalCode: 'ABCDE',
   },
 };
@@ -40,10 +40,11 @@ const Profile = () => {
                     <img src={require('../img/doc-profile.png')} alt="Doctor" className="doctor-image" />
                   </div>
                   <div className="text ml-5">
-                    <p className="card-text name">{`Dr. ${doctorProfile.firstName} ${doctorProfile.lastName}, ${doctorProfile.degree}`}</p>
-                    <p className="card-text specialty">{`Specialty: ${doctorProfile.specialty}`}</p>
+                    <p className="card-text name">{`Dr. ${doctorProfile.firstName} ${doctorProfile.lastName}, 
+                                                        ${doctorProfile.degree}`}</p>
+                    <p className="card-text specialty">{`${doctorProfile.category}`}</p>
                     <p className="card-text year">{`Year Started: ${doctorProfile.yearStarted}`}</p>
-                    <p className="card-text subspecialty">{`Subspecialty: ${doctorProfile.subspecialty}`}</p>
+                    <p className="card-text subspecialty">{`Specialty: ${doctorProfile.specialty}`}</p>
                   </div>
                 </div>
               </div>

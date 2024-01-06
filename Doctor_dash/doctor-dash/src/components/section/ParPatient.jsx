@@ -8,7 +8,9 @@ const ParPatient = ({ confirmedAppointments}) => {
       <h1 className="patient-text">Patient Records</h1>
       <ul className="list-group hide-scrollbar">
         {confirmedAppointments.map(appointment => (
-          <li key={appointment.id} className="list-group-item d-flex flex-column flex-md-row justify-content-between align-items-center" style={{ backgroundColor: '#F3FDFE' }}>
+          <li key={appointment.id} className=
+              "list-group-item d-flex flex-column flex-md-row justify-content-between align-items-center" 
+                style={{ backgroundColor: '#F3FDFE' }}>
             <div className="name-column" style={{ marginTop: '20px' }}>
               <span>{appointment.name}</span>
             </div>
