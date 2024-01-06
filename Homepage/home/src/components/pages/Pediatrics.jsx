@@ -10,7 +10,7 @@ const Pediatrics = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/pediatrics');
+        const response = await axios.get('http://localhost:5000/api/pediatrics');
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

@@ -10,7 +10,7 @@ const GeneralMedicine = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/genmed');
+        const response = await axios.get('http://localhost:5000/api/genmed');
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

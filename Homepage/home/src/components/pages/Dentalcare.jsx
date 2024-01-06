@@ -1,6 +1,5 @@
 // GeneralMedicine.js
 
-
 import '../../App.css';
 import '../styles/Cards.css';
 import React, { useState, useEffect } from 'react';
@@ -12,7 +11,7 @@ const Dentistry = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/dentistry');
+        const response = await axios.get('http://localhost:5000/api/dentistry');
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
