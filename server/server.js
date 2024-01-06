@@ -302,16 +302,48 @@ app.post("/login", async (req, res) => {
 	}
 });
 
-app.post("/booking-request", async (req, res) => {
-	const [] = req.body;
-	const bookingQuery = "";
+app.post("/booking", checkPatient, async (req, res) => {
+	const {
+		firstName,
+		lastName,
+		birthdate,
+		gender,
+		phone,
+		email,
+		barangayStreet,
+		cityMunicipality,
+		province,
+		postal,
+		date,
+		time,
+	} = req.body;
+	const status = "pending";
+	const patientId = req.session.patientId;
 
-	const bookingValues = [];
+	const bookingQuery =
+		"INSERT INTO booking_requests (firstname, lastname, birthdate, gender, phone, email, barangaystreet, citymunicipality, province, postal, date, time, status, patient_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)";
+
+	const bookingValues = [
+		firstName,
+		lastName,
+		birthdate,
+		gender,
+		phone,
+		email,
+		barangayStreet,
+		cityMunicipality,
+		province,
+		postal,
+		date,
+		time,
+		status,
+		patientId
+	];
 
 	try {
 		await pool.query(bookingQuery, bookingValues);
 	} catch (err) {
-		res.status(403).json({ message: "Error booking request" + err.message });
+		res.status(500).json({ message: "Error in booking" + err });
 	}
 });
 
