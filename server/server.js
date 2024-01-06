@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors');
 const session = require("express-session");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
@@ -31,6 +32,7 @@ app.use(
 );
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 app.use(express.static(path.join(__dirname, "../IMAGES")));
 app.use(express.static(path.join(__dirname, "../views")));
 app.use(
@@ -100,11 +102,7 @@ app.post("/patient-personal_info", async (req, res) => {
 		postal,
 	} = req.body;
 	const userId = req.session.userId;
-	const firstName = req.session.newUserFirstName;
-	const lastName = req.session.newUserLastName;
 	const newPatient = [
-		firstName,
-		lastName,
 		gender,
 		birthday,
 		phone,
@@ -116,7 +114,7 @@ app.post("/patient-personal_info", async (req, res) => {
 	];
 
 	const patientQuery =
-		"INSERT INTO patients (firstname, lastname, gender, birthday, phone, province, city_municipality, barangay, postal, user_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
+		"INSERT INTO patients (gender, birthday, phone, province, city_municipality, barangay, postal, user_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)";
 
 	try {
 		await pool.query(patientQuery, newPatient);
@@ -267,8 +265,12 @@ app.post("/doctor-schedule", async (req, res) => {
 	}
 });
 
-app.post("/success", (res) => {
-	res.sendFile(path.join(__dirname, "../views", "login.html"));
+app.post("/success", (req, res) => {
+	try {
+		res.redirect('http://localhost:5000/login');
+	} catch (error) {
+		res.status(401).json({ message: error.message });
+	}
 });
 
 app.post("/login", async (req, res) => {
@@ -287,9 +289,9 @@ app.post("/login", async (req, res) => {
 				req.session.userType = user.type;
 
 				if (req.session.userType === "doctor") {
-					res.redirect("/doctor-dashboard");
+					res.redirect("http://localhost:3002/profile");
 				} else if (req.session.userType === "patient") {
-					res.redirect("/Home-page");
+					res.redirect("http://localhost:3001/user-profile-page");
 				}
 			} else {
 				res.status(401).json({ message: "Invalid password" });
@@ -427,7 +429,7 @@ app.get("/Profile-page", checkPatient, async (req, res) => {
 app.get('/api/pediatrics', async (req, res) => {
   try {
     // Query to fetch data from the PostgreSQL table
-    const query = "SELECT * FROM doctors WHERE specialty='Pediatrics'";
+    const query = "SELECT * FROM doctors WHERE specialties='Pediatrics'";
 
     // Connect to the PostgreSQL database and fetch data
     const result = await pool.query(query);
@@ -514,7 +516,7 @@ app.post("/logout", (req, res) => {
 		if (err) {
 			res.status(500).json({ message: "Error logging out" });
 		} else {
-			res.redirect("/");
+			res.redirect("http://localhost:3000/");
 		}
 	});
 });
