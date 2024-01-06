@@ -416,7 +416,7 @@ app.get('/api/pediatrics', async (req, res) => {
 app.get('/api/surgery', async (req, res) => {
   try {
     // Query to fetch data from the PostgreSQL table
-    const query = "SELECT * FROM doctors WHERE specialty='Surgery'";
+    const query = "SELECT * FROM doctors WHERE specialties='surgery'";
 
     // Connect to the PostgreSQL database and fetch data
     const result = await pool.query(query);
@@ -437,7 +437,7 @@ app.get('/api/surgery', async (req, res) => {
 app.get('/api/dentistry', async (req, res) => {
   try {
     // Query to fetch data from the PostgreSQL table
-    const query = "SELECT * FROM doctors WHERE specialty='Dentistry'";
+    const query = "SELECT * FROM doctors WHERE specialties='dentistry'";
 
     // Connect to the PostgreSQL database and fetch data
     const result = await pool.query(query);
@@ -458,7 +458,7 @@ app.get('/api/dentistry', async (req, res) => {
 app.get('/api/genmed', async (req, res) => {
   try {
     // Query to fetch data from the PostgreSQL table
-    const query = "SELECT * FROM doctors WHERE specialty='General'";
+    const query = "SELECT * FROM doctors WHERE specialties='general'";
 
     // Connect to the PostgreSQL database and fetch data
     const result = await pool.query(query);

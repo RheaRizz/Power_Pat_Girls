@@ -1,8 +1,6 @@
 
 
-import { Card, Button } from 'react-bootstrap';
 import '../../App.css';
-import loweesImage from '../../components/images/lowees.jpg';
 import '../styles/Cards.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -13,7 +11,7 @@ const GeneralMedicine = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/genmed');
+        const response = await axios.get('http://localhost:5000/api/genmed');
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
